@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 [RequireComponent(typeof(EntityController))]
 [RequireComponent(typeof(PlayerInput))]
 public class Player : MonoBehaviour {
 
     [SerializeField] Text text;
-
+    [SerializeField] Transform sprite;
     [SerializeField] EntityPhysicsData playerData;
     PlayerInput input;
     EntityController controller;
@@ -27,12 +28,12 @@ public class Player : MonoBehaviour {
 
         wishVelocity = Vector3.zero;
         actualVelocity = Vector3.zero;
+
+        sprite.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     void Update() {
         wishVelocity = new Vector3(input.moveDir * playerData.moveSpeed, 0, 0);
-
-        if(jumping) print("jumping");
 
         if(Time.time - jumpStartTime > playerData.jumpTime || !input.jump) {
             jumping = false;
@@ -54,7 +55,22 @@ public class Player : MonoBehaviour {
             jumping = true;
             jumpStartTime = Time.time;
         }
+        if(Mathf.Sign(wishVelocity.x) == 1 && wishVelocity.x != 0 && sprite.rotation.eulerAngles.y == 0) {
+            print("flip right");
+            FlipSprite();
+        }
+        else if(Mathf.Sign(wishVelocity.x) == -1 && Mathf.Abs(sprite.rotation.eulerAngles.y) == 180) {
+            print("flip left");
+            FlipSprite();
+        }
         actualVelocity = controller.Move(wishVelocity);
+    }
+
+    void FlipSprite() {
+        if(sprite.rotation.y == 0)
+            sprite.DORotate(new Vector3(0, 180, 0), 0.2f);
+        else
+            sprite.DORotate(new Vector3(0, 0, 0), 0.2f);
     }
 
     void SetDebugText() {
