@@ -13,9 +13,7 @@ public class EntityController : MonoBehaviour {
     }
 
     public Vector3 Move(Vector3 moveAmount) {
-
         controller.Move(moveAmount);
-
         return controller.velocity;
     }
 

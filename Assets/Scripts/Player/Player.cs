@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
     Vector3 wishVelocity;
     Vector3 actualVelocity;
 
+    bool holdingJump = false;
+
     void Awake() {
         input = GetComponent<PlayerInput>();
         controller = GetComponent<EntityController>();
@@ -25,12 +27,19 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
+        if(!input.jump) {
+            holdingJump = false;
+        }
         wishVelocity = new Vector3(input.moveDir * playerData.moveSpeed, actualVelocity.y, 0);
+        if(Mathf.Approximately(wishVelocity.y, 0)) {
+            wishVelocity.y = -playerData.gravity * Time.fixedDeltaTime;
+        }
 
         CalculateGravity();
 
-        if(controller.isGrounded() && input.jump) {
+        if(controller.isGrounded() && input.jump && !holdingJump) {
             wishVelocity.y += playerData.jumpForce;
+            holdingJump = true;
         }
 
         actualVelocity = controller.Move(wishVelocity * Time.deltaTime);
@@ -40,7 +49,8 @@ public class Player : MonoBehaviour {
 
     void CalculateGravity() {
         if(controller.isGrounded()) {
-            wishVelocity.y = -playerData.gravity * Time.deltaTime;
+            Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red, 5);
+            wishVelocity.y = -playerData.gravity * Time.fixedDeltaTime;
         }
         else {
             wishVelocity.y -= playerData.gravity * Time.deltaTime;
@@ -53,7 +63,7 @@ public class Player : MonoBehaviour {
                     $"HSpeed: {actualVelocity.x.ToString("f2")}\n" +
                     $"VSpeed: {actualVelocity.y.ToString("f2")}\n" +
                     $"Velocity: {actualVelocity.ToString("f2")}\n" +
-                    $"WishVel: {wishVelocity.ToString("f2")}\n" +
+                    $"WishVel: {wishVelocity.ToString("f3")}\n" +
                     $"Grounded: {controller.isGrounded()}"
         ;
     }
