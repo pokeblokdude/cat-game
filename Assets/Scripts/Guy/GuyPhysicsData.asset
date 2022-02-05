@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GuyPhysicsData
   m_EditorClassIdentifier: 
   groundDrag: 10
-  airDrag: 5
-  moveSpeed: 5
+  airDrag: 0.5
+  moveSpeed: 0.5
   airMoveSpeedMultiplier: 0.4
   jumpForce: 5
   jumpTime: 0.5

@@ -845,7 +845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693090041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.528, y: 0.092, z: 1.142}
+  m_LocalPosition: {x: 1.02, y: 0.092, z: 1.142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -865,6 +865,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00dc05352c6ceef469441eb54346bff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guyData: {fileID: 11400000, guid: 28e02dd2a082ab94f9921e4d54733bdd, type: 2}
+  sprite: {fileID: 1834890787}
+  idleTimeRange: {x: 2, y: 6}
 --- !u!114 &693090044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,7 +1130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902456315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.7, z: -12.09}
+  m_LocalPosition: {x: 0, y: 2.7, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1360,7 +1363,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778157, y: 1}
+    m_SensorSize: {x: 1.7790143, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1377,7 +1380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814422534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.7, z: -12.09}
+  m_LocalPosition: {x: 0, y: 2.7, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
