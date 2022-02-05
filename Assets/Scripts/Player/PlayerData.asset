@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8027ecd04de58849a70b65186f13ab2, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  gravity: 20
-  moveSpeed: 5
+  groundDrag: 10
+  airDrag: 0.5
+  moveSpeed: 2
+  airMoveSpeedMultiplier: 0.1
   jumpForce: 10

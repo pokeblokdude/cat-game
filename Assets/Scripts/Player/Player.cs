@@ -30,35 +30,22 @@ public class Player : MonoBehaviour {
         if(!input.jump) {
             holdingJump = false;
         }
-        wishVelocity = new Vector3(input.moveDir * playerData.moveSpeed, actualVelocity.y, 0);
-        if(Mathf.Approximately(wishVelocity.y, 0)) {
-            wishVelocity.y = -playerData.gravity * Time.fixedDeltaTime;
-        }
-
-        CalculateGravity();
-
-        if(controller.isGrounded() && input.jump && !holdingJump) {
-            wishVelocity.y += playerData.jumpForce;
-            holdingJump = true;
-        }
-
-        actualVelocity = controller.Move(wishVelocity * Time.deltaTime);
+        wishVelocity = new Vector3(input.moveDir * playerData.moveSpeed, 0, 0);
 
         SetDebugText();
     }
 
-    void CalculateGravity() {
-        if(controller.isGrounded()) {
-            Debug.DrawRay(transform.position, Vector3.down * 0.1f, Color.red, 5);
-            wishVelocity.y = -playerData.gravity * Time.fixedDeltaTime;
+    void FixedUpdate() {
+        if(controller.isGrounded() && input.jump && !holdingJump) {
+            controller.Jump();
+            holdingJump = true;
         }
-        else {
-            wishVelocity.y -= playerData.gravity * Time.deltaTime;
-        }
+        actualVelocity = controller.Move(wishVelocity);
     }
 
     void SetDebugText() {
-        text.text = $"FPS: {(1/Time.deltaTime).ToString("f0")}\n\n" +
+        text.text = $"FPS: {(1/Time.deltaTime).ToString("f0")}\n" +
+                    $"deltaTime: {Time.deltaTime.ToString("f8")}\n\n" +
                     $"Position: {transform.position.ToString("f4")}\n" +
                     $"HSpeed: {actualVelocity.x.ToString("f2")}\n" +
                     $"VSpeed: {actualVelocity.y.ToString("f2")}\n" +
