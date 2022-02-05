@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -143,8 +143,8 @@ TextureImporter:
       name: cat_jump_0
       rect:
         serializedVersion: 2
-        x: 127
-        y: 32
+        x: 130
+        y: 37
         width: 350
         height: 306
       alignment: 7
@@ -164,8 +164,8 @@ TextureImporter:
       name: cat_jump_1
       rect:
         serializedVersion: 2
-        x: 581
-        y: 34
+        x: 564
+        y: 42
         width: 408
         height: 216
       alignment: 7
@@ -185,8 +185,8 @@ TextureImporter:
       name: cat_jump_2
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 33
+        x: 1024
+        y: 55
         width: 399
         height: 292
       alignment: 7
@@ -206,8 +206,8 @@ TextureImporter:
       name: cat_jump_3
       rect:
         serializedVersion: 2
-        x: 1569
-        y: 60
+        x: 1554
+        y: 45
         width: 354
         height: 422
       alignment: 7

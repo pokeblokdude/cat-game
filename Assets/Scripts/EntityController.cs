@@ -10,7 +10,9 @@ public class EntityController : MonoBehaviour {
     Rigidbody rb;
     CapsuleCollider col;
 
+    int facing = 1;
     bool grounded;
+    bool landedThisFrame = false;
 
     void Awake() {
         col = GetComponent<CapsuleCollider>();
@@ -19,7 +21,17 @@ public class EntityController : MonoBehaviour {
     }
 
     void Update() {
-        grounded = Physics.Raycast(transform.position + col.center, Vector3.down, col.height / 2 + 0.1f, collisionMask);
+        bool grnd = Physics.Raycast(transform.position + col.center, Vector3.down, col.height / 2 + 0.1f, collisionMask);
+        if(grnd && !grounded) {
+            grounded = true;
+            landedThisFrame = true;
+        }
+        else if(grnd && grounded) {
+            landedThisFrame = false;
+        }
+        else {
+            grounded = false;
+        }
         rb.drag = grounded ? entityPhysicsData.groundDrag : entityPhysicsData.airDrag;
     }
 
@@ -37,13 +49,25 @@ public class EntityController : MonoBehaviour {
     }
 
     public Vector3 Jump(bool charged) {
-        rb.AddForce(Vector3.up * (charged ? entityPhysicsData.chargedJumpForce : entityPhysicsData.jumpForce), ForceMode.Impulse);
+        if(charged) {
+            rb.AddForce(new Vector3(0.4f * facing, 1, 0).normalized * entityPhysicsData.chargedJumpForce, ForceMode.Impulse);
+        }
+        else {
+            rb.AddForce(Vector3.up * entityPhysicsData.jumpForce, ForceMode.Impulse);
+        }
         return rb.velocity;
     }
 
+    public void SetFacing(int dir) {
+        facing = dir;
+    }
 
-    public bool isGrounded() {
+    public bool IsGrounded() {
         return grounded;
+    }
+
+    public bool LandedThisFrame() {
+        return landedThisFrame;
     }
 
 }

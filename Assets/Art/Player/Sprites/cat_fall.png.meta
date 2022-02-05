@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6c4599c7e5da08f4f9454219f1c29cea
+guid: 2cf97af127afdef43849a95a92b7603c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,13 +140,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: guy_walk_0
+      name: cat_fall_0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 459
-        width: 164
-        height: 337
+        x: 61
+        y: 178
+        width: 453
+        height: 231
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,19 +154,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ff3b3bc737ee674ab35e0418bbba9c7
-      internalID: -56205099
+      spriteID: 02d157a6f55f92945bc9d2ad605d78ef
+      internalID: -1984243704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: guy_walk_1
+      name: cat_fall_1
       rect:
         serializedVersion: 2
-        x: 335
-        y: 467
-        width: 199
+        x: 606
+        y: 137
+        width: 440
+        height: 360
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f7474fb0bbf324cb0a1a7e397d49e6
+      internalID: 872928532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cat_fall_2
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 157
+        width: 435
         height: 320
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -175,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e97b820889197554689fcbb139934ae8
-      internalID: 417303571
+      spriteID: 1f875560759f1d7498a9580251f93dfb
+      internalID: 200013562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: guy_walk_2
+      name: cat_fall_3
       rect:
         serializedVersion: 2
-        x: 610
-        y: 469
-        width: 175
-        height: 400
+        x: 1628
+        y: 145
+        width: 405
+        height: 267
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,113 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ca79a578c78a934e903b67a463422ca
-      internalID: -1472366261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: guy_walk_3
-      rect:
-        serializedVersion: 2
-        x: 839
-        y: 468
-        width: 200
-        height: 381
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d34381693c186641903e0a2e550356d
-      internalID: 1229973467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: guy_walk_4
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 44
-        width: 156
-        height: 334
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d4f2fb59562be447863fceef2753417
-      internalID: 388225784
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: guy_walk_5
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 44
-        width: 192
-        height: 317
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1dca21f632eadca4aa36ab9d77021649
-      internalID: -844199317
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: guy_walk_6
-      rect:
-        serializedVersion: 2
-        x: 597
-        y: 23
-        width: 207
-        height: 417
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 499ce060c6cf20f46a2e39bd09acc016
-      internalID: 2049834758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: guy_walk_7
-      rect:
-        serializedVersion: 2
-        x: 850
-        y: 32
-        width: 240
-        height: 380
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 573cdb94b68c54d458ffba270722aed1
-      internalID: 47900187
+      spriteID: 680c988eb9e7acd43944de02e78303ee
+      internalID: -694640092
       vertices: []
       indices: 
       edges: []
@@ -310,7 +226,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 271d131d5070c9245a36b02f8b43a7b8
     internalID: 0
     vertices: []
     indices: 
@@ -318,14 +234,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      guy_walk_2: -1472366261
-      guy_walk_5: -844199317
-      guy_walk_4: 388225784
-      guy_walk_6: 2049834758
-      guy_walk_3: 1229973467
-      guy_walk_0: -56205099
-      guy_walk_1: 417303571
-      guy_walk_7: 47900187
+      cat_fall_3: -694640092
+      cat_fall_0: -1984243704
+      cat_fall_1: 872928532
+      cat_fall_2: 200013562
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
