@@ -5,71 +5,69 @@ using UnityEngine;
 public class PersonFSM : MonoBehaviour
 {
 
-
-
+    public int TimeBetweenStates = 500;
     public float moveDir { get; private set; }
+    public enum PersonState
+    {
+        idle,
+        moveRight,
+        moveLeft,
+        interact,
+        pickupCat
+    }
 
-    StateMachine stateMachine = new StateMachine();
-   
+    private PersonState state = PersonState.idle;
+
+    private int timeSinceState;
+
     void Start()
     {
-        stateMachine.ChangeState(new IdelState(this));
+
     }
  
     void Update()
     {
+
+        timeSinceState ++;
+        print(timeSinceState);
         
-        stateMachine.Update();
-    }
-}
+        switch (state)
+        {
+            case PersonState.idle:
+                moveDir = 0;
+                if (timeSinceState > TimeBetweenStates)
+                {
+                    state = PersonState.moveRight;
+                    timeSinceState = 0;
+                }
+                break;
+            case PersonState.moveRight:
+                moveDir = 1;
+                if (timeSinceState > TimeBetweenStates)
+                {
+                    state = PersonState.moveLeft;
+                    timeSinceState = 0;
+                }
+                break;
+            case PersonState.moveLeft:
+                moveDir = -1;
+                if (timeSinceState > TimeBetweenStates)
+                {
+                    state = PersonState.idle;
+                    timeSinceState = 0;
+                }
+                break;
+            // case PersonState.interact:
+            //     moveDir = 0;
+            //     state = PersonState.idle;
+            // case PersonState.pickupCat:
+            //     moveDir = 0;
+            //     state = PersonState.idle;
 
+            default:
+                break;
 
+        }
 
-public interface IState
-{
-    public void Enter();
-    public void Execute();
-    public void Exit();
-}
- 
-public class StateMachine
-{
-    IState currentState;
- 
-    public void ChangeState(IState newState)
-    {
-        if (currentState != null)
-            currentState.Exit();
- 
-        currentState = newState;
-        currentState.Enter();
-    }
- 
-    public void Update()
-    {
-        if (currentState != null) currentState.Execute();
     }
 }
- 
-public class IdelState : IState
-{
-    PersonFSM owner;
- 
-    public IdelState(PersonFSM owner) { this.owner = owner; }
- 
-    public void Enter()
-    {
-        Debug.Log("entering idle state");
-    }
- 
-    public void Execute()
-    {
-        Debug.Log("updating idle state");
-    }
- 
-    public void Exit()
-    {
-        Debug.Log("exiting idle state");
-    }
-}
- 

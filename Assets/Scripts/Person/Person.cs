@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(PersonFSM))]
 public class Person : MonoBehaviour {
 
-    [SerializeField] EntityPhysicsData playerData;
+    [SerializeField] EntityPhysicsData personData;
     PersonFSM stateMachine;
     EntityController controller;
     
@@ -23,7 +23,7 @@ public class Person : MonoBehaviour {
     }
 
     void Update() {
-        wishVelocity = new Vector3(stateMachine.moveDir * playerData.moveSpeed, 0, 0);
+        wishVelocity = new Vector3(stateMachine.moveDir * personData.moveSpeed, 0, 0);
 
     }
 
