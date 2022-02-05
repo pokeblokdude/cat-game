@@ -24,6 +24,9 @@ public class Player : MonoBehaviour {
 
         wishVelocity = Vector3.zero;
         actualVelocity = Vector3.zero;
+
+        PlayerPrefs.SetInt("Progress", 0);  // initialize player progress to zero
+        PlayerPrefs.Save();
     }
 
     void Update() {

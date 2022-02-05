@@ -6,7 +6,7 @@ public class ObjectTempl : MonoBehaviour
 {
     public GameObject P;    // get a reference to the player
     public int MaxUses = 1; // set the default max number of uses for this object
-
+    public int MinProgressRequirement;
 
 
     //set up private variables for logic and messing about
@@ -21,7 +21,6 @@ public class ObjectTempl : MonoBehaviour
 
         objScale = gameObject.transform.localScale;
         gameObject.transform.localScale = new Vector3(objScale.x, objScale.y*2, objScale.z);
-
     }
 
 
@@ -30,7 +29,7 @@ public class ObjectTempl : MonoBehaviour
     void OnTriggerEnter()
     {
         canInteract = true;
-        print("contact");
+        print("enter");
     }
 
 
@@ -52,18 +51,25 @@ public class ObjectTempl : MonoBehaviour
 
     void Update()
     {
+
+        
         // if the player is trying to interact and 
         // we are bellow the max uses and 
         // we are not already using something and 
         // the player is overlapping us, run the folowing code
 
-        if (P.GetComponent<PlayerInput>().interact && useCount < MaxUses && !isUsing && canInteract)
+        if (P.GetComponent<PlayerInput>().interact && ( useCount < MaxUses ) && !isUsing && canInteract)
         {
             useCount ++;    // increase the amount of uses
             isUsing = true; // player is interaction with us
 
             InteractWithObject();
 
+            if (PlayerPrefs.GetInt("Progress") >= MinProgressRequirement)
+            {
+                PlayerPrefs.SetInt("Progress", PlayerPrefs.GetInt("Progress") + 1);
+            }
+            print(PlayerPrefs.GetInt("Progress"));
         }
 
         // stop interaction when the player releases the interaction key
