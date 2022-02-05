@@ -19,7 +19,7 @@ public class EntityController : MonoBehaviour {
     }
 
     void Update() {
-        grounded = Physics.Raycast(transform.position, Vector3.down, col.height / 2 + 0.1f, collisionMask);
+        grounded = Physics.Raycast(transform.position + col.center, Vector3.down, col.height / 2 + 0.1f, collisionMask);
         rb.drag = grounded ? entityPhysicsData.groundDrag : entityPhysicsData.airDrag;
     }
 
@@ -29,6 +29,9 @@ public class EntityController : MonoBehaviour {
         }
         else {
             rb.AddForce(moveAmount * entityPhysicsData.airMoveSpeedMultiplier, ForceMode.Impulse);
+            if(rb.velocity == Vector3.zero) {
+                rb.AddForce(Vector3.down * 0.1f, ForceMode.Impulse);
+            }
         }
         return rb.velocity;
     }

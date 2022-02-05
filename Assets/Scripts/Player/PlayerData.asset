@@ -15,5 +15,6 @@ MonoBehaviour:
   groundDrag: 10
   airDrag: 0.5
   moveSpeed: 2
-  airMoveSpeedMultiplier: 0.1
+  airMoveSpeedMultiplier: 0.05
   jumpForce: 10
+  jumpTime: 0.3

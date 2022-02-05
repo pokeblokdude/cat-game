@@ -13,4 +13,5 @@ public class EntityPhysicsData : ScriptableObject {
     public float moveSpeed = 5;
     public float airMoveSpeedMultiplier = 0.4f;
     public float jumpForce = 5;
+    public float jumpTime = 0.5f;
 }
