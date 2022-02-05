@@ -22,6 +22,8 @@ public class Player : MonoBehaviour {
 
     bool jumping = false;
     float jumpStartTime;
+    bool holdingJump = false;
+
     bool chargedJumping = false;
     bool crouching = false;
     float crouchStartTime;
@@ -41,12 +43,20 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
+        // logic for not letting you hold down jump to keep jumping
+        if(controller.LandedThisFrame() && input.jump) {
+            holdingJump = true;
+        }
+        if(!input.jump) {
+            holdingJump = false;
+        }
+
         wishVelocity = new Vector3(input.moveDir * playerData.moveSpeed, 0, 0);
 
+        // variable height jump
         if(Time.time - jumpStartTime > playerData.jumpTime || !input.jump) {
             jumping = false;
         }
-
         if(jumping && Time.time - jumpStartTime < playerData.jumpTime) {
             rb.useGravity = false;
             anim.SetBool("grounded", false);
@@ -67,11 +77,16 @@ public class Player : MonoBehaviour {
             crouching = false;
         }
 
+        // setting variable for the animation controller
+        anim.SetFloat("vSpeed", actualVelocity.y);
+        anim.SetFloat("hSpeed", Mathf.Abs(actualVelocity.x));
+
         SetDebugText();
     }
 
     void FixedUpdate() {
-        if(controller.isGrounded() && input.jump && !jumping) {
+        // jump if grounded and not already jumping
+        if(controller.IsGrounded() && input.jump && !jumping) {
             if(input.crouch && Time.time - crouchStartTime > playerData.chargeTime) {
                 controller.Jump(true);
                 chargedJumping = true;
@@ -85,7 +100,8 @@ public class Player : MonoBehaviour {
             anim.SetBool("grounded", false);
         }
 
-        if(controller.isGrounded() && !jumping) {
+        // play grounded animation, unless we started jumping this frame
+        if(controller.IsGrounded() && !jumping) {
             anim.SetBool("grounded", true);
             anim.SetBool("jump", false);
         }
@@ -94,14 +110,16 @@ public class Player : MonoBehaviour {
         if(Mathf.Sign(wishVelocity.x) == 1 && wishVelocity.x != 0 && sprite.rotation.eulerAngles.y == 0) {
             print("flip right");
             FlipSprite();
+            controller.SetFacing(1);
         }
         else if(Mathf.Sign(wishVelocity.x) == -1 && Mathf.Abs(sprite.rotation.eulerAngles.y) == 180) {
             print("flip left");
             FlipSprite();
+            controller.SetFacing(-1);
         }
 
         // apply movement to controller
-        if(!input.crouch || !controller.isGrounded()) {
+        if(!input.crouch || !controller.IsGrounded()) {
             actualVelocity = controller.Move(wishVelocity);
         }
     }
@@ -121,7 +139,7 @@ public class Player : MonoBehaviour {
                     $"VSpeed: {actualVelocity.y.ToString("f2")}\n" +
                     $"Velocity: {actualVelocity.ToString("f2")}\n" +
                     $"WishVel: {wishVelocity.ToString("f3")}\n" +
-                    $"Grounded: {controller.isGrounded()}\n" +
+                    $"Grounded: {controller.IsGrounded()}\n" +
                     $"Jumping: {jumping}\n" +
                     $"Charged: {input.crouch &&  Time.time - crouchStartTime > playerData.chargeTime}\n\n" +
                     $"progress: {PlayerPrefs.GetInt("Progress")}"
