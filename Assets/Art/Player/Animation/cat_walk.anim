@@ -36,7 +36,28 @@ AnimationClip:
     - time: 0.875
       value: {fileID: -888663457, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
     attribute: m_Sprite
-    path: 
+    path: Sprite
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 435435647, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - time: 0.125
+      value: {fileID: -1577900985, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - time: 0.25
+      value: {fileID: 971051833, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - time: 0.375
+      value: {fileID: 1201981538, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - time: 0.5
+      value: {fileID: 392888416, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - time: 0.625
+      value: {fileID: -2116907465, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - time: 0.75
+      value: {fileID: -1970966213, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - time: 0.875
+      value: {fileID: -888663457, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    attribute: m_Sprite
+    path: Sprite/Sprite Back
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 8
@@ -47,13 +68,28 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 850496168
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 4038377462
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
+    - {fileID: 435435647, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - {fileID: -1577900985, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - {fileID: 971051833, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - {fileID: 1201981538, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - {fileID: 392888416, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - {fileID: -2116907465, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - {fileID: -1970966213, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
+    - {fileID: -888663457, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
     - {fileID: 435435647, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
     - {fileID: -1577900985, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
     - {fileID: 971051833, guid: fb5f8e6638ce5ea4e8f3eb074a3788c9, type: 3}
