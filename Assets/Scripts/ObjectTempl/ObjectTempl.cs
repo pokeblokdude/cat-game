@@ -6,7 +6,7 @@ public class ObjectTempl : MonoBehaviour
 {
     public GameObject P;    // get a reference to the player
     public int MaxUses = 1; // set the default max number of uses for this object
-    public int MinProgressRequirement;
+    public int ProgressRequirement;
 
 
     //set up private variables for logic and messing about
@@ -26,18 +26,25 @@ public class ObjectTempl : MonoBehaviour
 
 
     // allow interactions if player is overlapping this object
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        canInteract = true;
-        print("enter");
+        if (other.name == P.name)
+        {
+            canInteract = true;
+            print("enter");
+        }
+        
     }
 
 
     // disable interactions if the player leaves this object
-    void OnTriggerExit()
+    void OnTriggerExit(Collider other)
     {
-        canInteract = false;
-        print("leave");
+        if (other.name == P.name)
+        {
+            canInteract = false;
+            print("leave");
+        }
     }
 
 
@@ -67,7 +74,7 @@ public class ObjectTempl : MonoBehaviour
 
 
             // update player progress if at the correct progression for this
-            if (PlayerPrefs.GetInt("Progress") == MinProgressRequirement)
+            if (PlayerPrefs.GetInt("Progress") == ProgressRequirement)
             {
                 PlayerPrefs.SetInt("Progress", PlayerPrefs.GetInt("Progress") + 1);
             }
