@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundDrag: 10
   airDrag: 0.5
-  moveSpeed: 2
+  moveSpeed: 1
   airMoveSpeedMultiplier: 0.05
   jumpForce: 10
   jumpTime: 0.3
+  chargedJumpForce: 20
+  chargeTime: 0.5

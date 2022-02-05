@@ -11,20 +11,26 @@ public class Player : MonoBehaviour {
     [SerializeField] Text text;
     [SerializeField] Transform sprite;
     [SerializeField] EntityPhysicsData playerData;
+
     PlayerInput input;
     EntityController controller;
     Rigidbody rb;
+    Animator anim;
     
     Vector3 wishVelocity;
     Vector3 actualVelocity;
 
     bool jumping = false;
     float jumpStartTime;
+    bool chargedJumping = false;
+    bool crouching = false;
+    float crouchStartTime;
 
     void Awake() {
         input = GetComponent<PlayerInput>();
         controller = GetComponent<EntityController>();
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
 
         wishVelocity = Vector3.zero;
         actualVelocity = Vector3.zero;
@@ -43,9 +49,22 @@ public class Player : MonoBehaviour {
 
         if(jumping && Time.time - jumpStartTime < playerData.jumpTime) {
             rb.useGravity = false;
+            anim.SetBool("grounded", false);
         }
         else {
             rb.useGravity = true;
+        }
+
+        if(input.crouch) {
+            anim.SetBool("crouch", true);
+            if(!crouching) {
+                crouching = true;
+                crouchStartTime = Time.time;
+            }
+        }
+        else {
+            anim.SetBool("crouch", false);
+            crouching = false;
         }
 
         SetDebugText();
@@ -53,10 +72,25 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate() {
         if(controller.isGrounded() && input.jump && !jumping) {
-            controller.Jump();
+            if(input.crouch && Time.time - crouchStartTime > playerData.chargeTime) {
+                controller.Jump(true);
+                chargedJumping = true;
+            }
+            else {
+                controller.Jump(false);
+                jumpStartTime = Time.time;
+            }
             jumping = true;
-            jumpStartTime = Time.time;
+            anim.SetBool("jump", true);
+            anim.SetBool("grounded", false);
         }
+
+        if(controller.isGrounded() && !jumping) {
+            anim.SetBool("grounded", true);
+            anim.SetBool("jump", false);
+        }
+
+        // play flipping animation if changing directions
         if(Mathf.Sign(wishVelocity.x) == 1 && wishVelocity.x != 0 && sprite.rotation.eulerAngles.y == 0) {
             print("flip right");
             FlipSprite();
@@ -65,7 +99,11 @@ public class Player : MonoBehaviour {
             print("flip left");
             FlipSprite();
         }
-        actualVelocity = controller.Move(wishVelocity);
+
+        // apply movement to controller
+        if(!input.crouch || !controller.isGrounded()) {
+            actualVelocity = controller.Move(wishVelocity);
+        }
     }
 
     void FlipSprite() {
@@ -85,6 +123,7 @@ public class Player : MonoBehaviour {
                     $"WishVel: {wishVelocity.ToString("f3")}\n" +
                     $"Grounded: {controller.isGrounded()}\n" +
                     $"Jumping: {jumping}\n" +
+                    $"Charged: {input.crouch &&  Time.time - crouchStartTime > playerData.chargeTime}\n\n" +
                     $"progress: {PlayerPrefs.GetInt("Progress")}"
         ;
     }

@@ -36,8 +36,8 @@ public class EntityController : MonoBehaviour {
         return rb.velocity;
     }
 
-    public Vector3 Jump() {
-        rb.AddForce(Vector3.up * entityPhysicsData.jumpForce, ForceMode.Impulse);
+    public Vector3 Jump(bool charged) {
+        rb.AddForce(Vector3.up * (charged ? entityPhysicsData.chargedJumpForce : entityPhysicsData.jumpForce), ForceMode.Impulse);
         return rb.velocity;
     }
 
