@@ -14,7 +14,7 @@ public class PlayerInput : MonoBehaviour {
         input = new InputManager();
 
         input.Player.Move.performed += ctx => {
-            moveDir = ctx.ReadValue<float>();
+            moveDir = Mathf.Sign(ctx.ReadValue<float>());
         };
         input.Player.Move.canceled += ctx => {
             moveDir = 0;
