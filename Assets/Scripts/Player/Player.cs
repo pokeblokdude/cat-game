@@ -30,6 +30,8 @@ public class Player : MonoBehaviour {
         actualVelocity = Vector3.zero;
 
         sprite.rotation = Quaternion.Euler(0, 180, 0);
+        PlayerPrefs.SetInt("Progress", 0);  // initialize player progress to zero
+        PlayerPrefs.Save();
     }
 
     void Update() {
@@ -82,7 +84,8 @@ public class Player : MonoBehaviour {
                     $"Velocity: {actualVelocity.ToString("f2")}\n" +
                     $"WishVel: {wishVelocity.ToString("f3")}\n" +
                     $"Grounded: {controller.isGrounded()}\n" +
-                    $"Jumping: {jumping}"
+                    $"Jumping: {jumping}\n" +
+                    $"progress: {PlayerPrefs.GetInt("Progress")}"
         ;
     }
 }
