@@ -54,7 +54,8 @@ public class Player : MonoBehaviour {
                     $"VSpeed: {actualVelocity.y.ToString("f2")}\n" +
                     $"Velocity: {actualVelocity.ToString("f2")}\n" +
                     $"WishVel: {wishVelocity.ToString("f3")}\n" +
-                    $"Grounded: {controller.isGrounded()}"
+                    $"Grounded: {controller.isGrounded()}\n\n" +
+                    $"progress: {PlayerPrefs.GetInt("Progress")}"
         ;
     }
 }

@@ -65,11 +65,12 @@ public class ObjectTempl : MonoBehaviour
 
             InteractWithObject();
 
-            if (PlayerPrefs.GetInt("Progress") >= MinProgressRequirement)
+
+            // update player progress if at the correct progression for this
+            if (PlayerPrefs.GetInt("Progress") == MinProgressRequirement)
             {
                 PlayerPrefs.SetInt("Progress", PlayerPrefs.GetInt("Progress") + 1);
             }
-            print(PlayerPrefs.GetInt("Progress"));
         }
 
         // stop interaction when the player releases the interaction key
