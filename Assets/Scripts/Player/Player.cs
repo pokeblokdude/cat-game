@@ -12,33 +12,47 @@ public class Player : MonoBehaviour {
     [SerializeField] EntityPhysicsData playerData;
     PlayerInput input;
     EntityController controller;
+    Rigidbody rb;
     
     Vector3 wishVelocity;
     Vector3 actualVelocity;
 
-    bool holdingJump = false;
+    bool jumping = false;
+    float jumpStartTime;
 
     void Awake() {
         input = GetComponent<PlayerInput>();
         controller = GetComponent<EntityController>();
+        rb = GetComponent<Rigidbody>();
 
         wishVelocity = Vector3.zero;
         actualVelocity = Vector3.zero;
     }
 
     void Update() {
-        if(!input.jump) {
-            holdingJump = false;
-        }
         wishVelocity = new Vector3(input.moveDir * playerData.moveSpeed, 0, 0);
+
+        if(jumping) print("jumping");
+
+        if(Time.time - jumpStartTime > playerData.jumpTime || !input.jump) {
+            jumping = false;
+        }
+
+        if(jumping && Time.time - jumpStartTime < playerData.jumpTime) {
+            rb.useGravity = false;
+        }
+        else {
+            rb.useGravity = true;
+        }
 
         SetDebugText();
     }
 
     void FixedUpdate() {
-        if(controller.isGrounded() && input.jump && !holdingJump) {
+        if(controller.isGrounded() && input.jump && !jumping) {
             controller.Jump();
-            holdingJump = true;
+            jumping = true;
+            jumpStartTime = Time.time;
         }
         actualVelocity = controller.Move(wishVelocity);
     }
@@ -51,7 +65,8 @@ public class Player : MonoBehaviour {
                     $"VSpeed: {actualVelocity.y.ToString("f2")}\n" +
                     $"Velocity: {actualVelocity.ToString("f2")}\n" +
                     $"WishVel: {wishVelocity.ToString("f3")}\n" +
-                    $"Grounded: {controller.isGrounded()}"
+                    $"Grounded: {controller.isGrounded()}\n" +
+                    $"Jumping: {jumping}"
         ;
     }
 }
