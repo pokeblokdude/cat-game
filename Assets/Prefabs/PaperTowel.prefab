@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4529071500206325805}
   - component: {fileID: -8584385542383910432}
   - component: {fileID: 4598093069060044562}
+  - component: {fileID: 330217232423030798}
   m_Layer: 0
   m_Name: PaperTowel
   m_TagString: Untagged
@@ -233,3 +234,15 @@ MonoBehaviour:
   MaxUses: 100
   ProgressRequirement: 0
   SoundEffect: {fileID: 8300000, guid: c2fe8a6ff51642e4eb6f2c5c6214b6ab, type: 3}
+--- !u!114 &330217232423030798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240522328374201977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602cc706223ab954badaf0cab3991da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

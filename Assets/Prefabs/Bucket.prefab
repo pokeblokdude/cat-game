@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4529071500206325805}
   - component: {fileID: -8584385542383910432}
   - component: {fileID: 2888865160286375033}
+  - component: {fileID: 9159481027900718924}
   m_Layer: 0
   m_Name: Bucket
   m_TagString: Untagged
@@ -234,3 +235,15 @@ MonoBehaviour:
   ProgressRequirement: 0
   SoundEffect: {fileID: 8300000, guid: dce74d5bd19640f4bba11b3a224b1e73, type: 3}
   ToPosition: {fileID: 0}
+--- !u!114 &9159481027900718924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240522328374201977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602cc706223ab954badaf0cab3991da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
