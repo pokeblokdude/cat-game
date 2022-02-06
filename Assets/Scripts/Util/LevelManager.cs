@@ -11,14 +11,18 @@ public class LevelManager : MonoBehaviour {
         transitionUI.gameObject.SetActive(true);
     }
 
-    public void ReloadScene() {
-        StartCoroutine(LoadLevel());
+    public void LoadMenu() {
+        StartCoroutine(LoadLevel(0));
     }
 
-    IEnumerator LoadLevel() {
+    public void ReloadScene() {
+        StartCoroutine(LoadLevel(1));
+    }
+
+    IEnumerator LoadLevel(int index) {
         transitionUI.Play();
         yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(index);
     }
 
 }

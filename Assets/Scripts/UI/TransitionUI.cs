@@ -7,12 +7,16 @@ public class TransitionUI : MonoBehaviour {
 
     CanvasGroup group;
 
-    void Start() {
+    void Awake() {
         group = GetComponent<CanvasGroup>();
-        group.DOFade(0, 1);
+        group.alpha = 1;
+    }
+
+    void Start() {
+        group.DOFade(0, 1).SetUpdate(true);
     }
 
     public void Play() {
-        group.DOFade(1, 1);
+        group.DOFade(1, 1).SetUpdate(true);
     }
 }
