@@ -12,4 +12,8 @@ public class Bucket : PlayerInteractible {
                           .Append(transform.DOMoveY(ToPosition.position.y, 0.6f).SetEase(Ease.InQuad));
     }
 
+    void BucketFall () {
+        GetComponent<Rigidbody>().useGravity = true;
+    }
+
 }
