@@ -1181,7 +1181,7 @@ Animator:
   m_GameObject: {fileID: 1017445397}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1befc2d0af45d5e458b639126e549f9f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0f9cac65aaa16c0459265069302daae8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1232,7 +1232,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 625621721, guid: ff9419d04831c1047b0897a623cffd4e, type: 3}
+  m_Sprite: {fileID: -184315099, guid: bf58736cf64138f4993d8bfd5749f0f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1576,7 +1576,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.707353, y: 1}
+    m_SensorSize: {x: 1.7700964, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
