@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void ExitToMenu() {
+        levelManager.LoadMenu();
+        audioManager.FadeMusic();
+    }
+
     public void GameOver() {
         StartCoroutine(Wait());
     }
