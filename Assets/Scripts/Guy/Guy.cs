@@ -13,7 +13,7 @@ public class Guy : MonoBehaviour {
 
     EntityController controller;
     Animator anim;
-    Interactible[] interactibles;
+    GuyInteractible[] interactibles;
 
     ActionState actionState;
 
@@ -26,12 +26,12 @@ public class Guy : MonoBehaviour {
     int walkDirection;
     float timeToWalk;
 
-    Interactible interactionTarget;
+    GuyInteractible interactionTarget;
 
     void Awake() {
         controller = GetComponent<EntityController>();
         anim = GetComponent<Animator>();
-        interactibles = FindObjectsOfType<Interactible>();
+        interactibles = FindObjectsOfType<GuyInteractible>();
 
         actionState = ActionState.IDLE;
     }
@@ -50,6 +50,7 @@ public class Guy : MonoBehaviour {
             case ActionState.IDLE:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
+                    anim.SetBool("fixing", false);
                     timeToIdle = Random.Range(idleTimeRange.x, idleTimeRange.y);
                     print("time to idle: " + timeToIdle);
                 }
@@ -125,7 +126,12 @@ public class Guy : MonoBehaviour {
             case ActionState.FIXING_OBJECT:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
+                    anim.SetBool("fixing", true);
                     print("fixing");
+                }
+                if(Time.time - stateEnterTime > interactionTarget.InteractionTime()) {
+                    interactionTarget.tag = "Untagged";
+                    ChangeState(ActionState.IDLE);
                 }
                 break;
             // ========================================================================= BUCKET_ON_HEAD
