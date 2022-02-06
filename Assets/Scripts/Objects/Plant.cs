@@ -8,5 +8,6 @@ public class Plant : PlayerInteractible
     public override void InteractWithObject ()
     {
         GetComponent<Rigidbody>().useGravity = true;
+        UpdateSprite();
     }
 }
