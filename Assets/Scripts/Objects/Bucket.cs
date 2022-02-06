@@ -7,16 +7,16 @@ public class Bucket : PlayerInteractible {
 
     [SerializeField] Transform ToPosition;
     [SerializeField] float dropSpeed = 0.3f;
-    bool onDoor = false;
+    public bool isMoved = false;
     public override void InteractWithObject () {
         transform.DOMoveX(ToPosition.position.x, dropSpeed).SetEase(Ease.Linear);
         transform.DOMoveY(ToPosition.position.y, dropSpeed).SetEase(Ease.InQuad);
-        onDoor = true;
+        isMoved = true;
     }
 
     void BucketFall () {
         GetComponent<Rigidbody>().useGravity = true;
-        onDoor = false;
+        isMoved = false;
     }
 
 }

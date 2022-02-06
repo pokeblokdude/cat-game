@@ -56,6 +56,10 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(2.5f);
     }
 
+    public void PlayCredits() {
+        StartCoroutine(Wait());
+    }
+
     public void Pause() {
         if(paused) {
             if(settingsMenuUI.activeSelf) {

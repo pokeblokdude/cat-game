@@ -48,6 +48,13 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
+
+        // check if game is over (in this case wether our progress >= 5)
+        if (PlayerPrefs.GetInt("Progress") >= 6) {
+            FindObjectOfType<GameManager>().PlayCredits();
+        }
+
+
         // logic for not letting you hold down jump to keep jumping
         if(controller.LandedThisFrame() && input.jump) {
             holdingJump = true;
