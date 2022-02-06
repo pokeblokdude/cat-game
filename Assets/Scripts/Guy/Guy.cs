@@ -13,6 +13,7 @@ public class Guy : MonoBehaviour {
 
     EntityController controller;
     Animator anim;
+    Interactible[] interactibles;
 
     ActionState actionState;
 
@@ -25,9 +26,12 @@ public class Guy : MonoBehaviour {
     int walkDirection;
     float timeToWalk;
 
+    Interactible interactionTarget;
+
     void Awake() {
         controller = GetComponent<EntityController>();
         anim = GetComponent<Animator>();
+        interactibles = FindObjectsOfType<Interactible>();
 
         actionState = ActionState.IDLE;
     }
@@ -35,10 +39,14 @@ public class Guy : MonoBehaviour {
     void Start() {
         stateEnterTime = Time.time;
         enteredStateThisFrame = true;
+        for(int i = 0; i < interactibles.Length; i++) {
+            print(interactibles[i].name);
+        }
     }
 
     void FixedUpdate() {
         switch(actionState) {
+            // ====================================================================== IDLE
             case ActionState.IDLE:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
@@ -48,9 +56,15 @@ public class Guy : MonoBehaviour {
                 if(Time.time - stateEnterTime > timeToIdle) {
                     ChangeState(ActionState.AIMLESS_WALK);
                 }
+                for(int i = 0; i < interactibles.Length; i++) {
+                    if(interactibles[i].CompareTag("NeedsFixing")) {
+                        interactionTarget = interactibles[i];
+                        ChangeState(ActionState.NEEDS_TO_FIX_OBJECT);
+                    }
+                }
                 Move(0);
                 break;
-            // =============================================================
+            // ======================================================================= AIMLESS_WALK
             case ActionState.AIMLESS_WALK:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
@@ -67,33 +81,60 @@ public class Guy : MonoBehaviour {
                 if(Time.time - stateEnterTime > timeToWalk) {
                     ChangeState(ActionState.IDLE);
                 }
+                for(int i = 0; i < interactibles.Length; i++) {
+                    if(interactibles[i].CompareTag("NeedsFixing")) {
+                        interactionTarget = interactibles[i];
+                        ChangeState(ActionState.NEEDS_TO_FIX_OBJECT);
+                    }
+                }
 
                 break;
-            // =====================================================================
+            // ======================================================================== WANTS_TO_PET_CAT
             case ActionState.WANTS_TO_PET_CAT:
-
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                }
                 break;
-            // =====================================================================
+            // ============================================================================ PETTING_CAT
             case ActionState.PETTING_CAT:
-
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                }
                 break;
-            // =====================================================================
+            // ================================================================================= ANGRY
             case ActionState.ANGRY:
-
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                }
                 break;
-            // =====================================================================
+            // ======================================================================= NEEDS_TO_FIX_OBJECT
             case ActionState.NEEDS_TO_FIX_OBJECT:
-
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                    print("need to fix");
+                }
+                walkDirection = (int)Mathf.Sign(interactionTarget.transform.position.x - transform.position.x);
+                if(Mathf.Abs(transform.position.x - interactionTarget.transform.position.x) > 0.1f) {
+                    Move(walkDirection);
+                }
+                else {
+                    ChangeState(ActionState.FIXING_OBJECT);
+                }
                 break;
-            // =====================================================================
+            // ========================================================================= FIXING_OBJECT
             case ActionState.FIXING_OBJECT:
-
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                    print("fixing");
+                }
                 break;
-            // =====================================================================
+            // ========================================================================= BUCKET_ON_HEAD
             case ActionState.BUCKET_ON_HEAD:
-
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                }
                 break;
-            // =====================================================================
+            // ========================================================================= ERROR
             default:
                 throw new System.Exception("Guy entered unkown state");
         }
