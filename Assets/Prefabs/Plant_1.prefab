@@ -122,7 +122,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -249,8 +249,7 @@ MonoBehaviour:
   MaxUses: 100
   ProgressRequirement: 0
   SoundEffect: {fileID: 8300000, guid: e5471c856beb850468e1a7480a66ee21, type: 3}
-  AlternateSprite: {fileID: 0}
-  AlternateAnim: {fileID: 0}
+  AlternateSpriteAnim: {fileID: 9100000, guid: 4c018ed52f48652409103b7f8eac2e0d, type: 2}
 --- !u!54 &1593078729204210199
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -278,5 +277,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.68, z: 0.2}
+  m_Size: {x: 0.64, y: 0.53, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0.2}
