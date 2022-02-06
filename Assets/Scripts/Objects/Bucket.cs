@@ -6,14 +6,17 @@ using DG.Tweening;
 public class Bucket : PlayerInteractible {
 
     [SerializeField] Transform ToPosition;
-
+    [SerializeField] float dropSpeed = 0.3f;
+    bool onDoor = false;
     public override void InteractWithObject () {
-        DOTween.Sequence().Append(transform.DOMoveX(ToPosition.position.x, 0.6f).SetEase(Ease.InQuad))
-                          .Append(transform.DOMoveY(ToPosition.position.y, 0.6f).SetEase(Ease.InQuad));
+        transform.DOMoveX(ToPosition.position.x, dropSpeed).SetEase(Ease.Linear);
+        transform.DOMoveY(ToPosition.position.y, dropSpeed).SetEase(Ease.InQuad);
+        onDoor = true;
     }
 
     void BucketFall () {
         GetComponent<Rigidbody>().useGravity = true;
+        onDoor = false;
     }
 
 }
