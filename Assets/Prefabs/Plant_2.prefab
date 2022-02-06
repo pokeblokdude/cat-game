@@ -265,8 +265,7 @@ MonoBehaviour:
   MaxUses: 100
   ProgressRequirement: 0
   SoundEffect: {fileID: 8300000, guid: e5471c856beb850468e1a7480a66ee21, type: 3}
-  AlternateSprite: {fileID: 0}
-  AlternateAnim: {fileID: 0}
+  AlternateSpriteAnim: {fileID: 9100000, guid: fb78f8703a702544db06f8ba8d6ac868, type: 2}
 --- !u!65 &8824206182870470335
 BoxCollider:
   m_ObjectHideFlags: 0
