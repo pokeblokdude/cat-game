@@ -128,12 +128,10 @@ public class Player : MonoBehaviour {
 
         // play flipping animation if changing directions
         if(Mathf.Sign(wishVelocity.x) == 1 && wishVelocity.x != 0 && sprite.rotation.eulerAngles.y == 0) {
-            print("flip right");
             FlipSprite();
             controller.SetFacing(1);
         }
         else if(Mathf.Sign(wishVelocity.x) == -1 && Mathf.Abs(sprite.rotation.eulerAngles.y) == 180) {
-            print("flip left");
             FlipSprite();
             controller.SetFacing(-1);
         }
