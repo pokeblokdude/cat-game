@@ -8,8 +8,7 @@ public class PlayerInteractible : MonoBehaviour {
     public int MaxUses = 100; // set the default max number of uses for this object
     public int ProgressRequirement;
     public AudioClip SoundEffect;
-    public Sprite AlternateSprite;
-    public RuntimeAnimatorController AlternateAnim;
+    public RuntimeAnimatorController AlternateSpriteAnim;
 
     internal AudioSource audioSource;
 
@@ -25,8 +24,8 @@ public class PlayerInteractible : MonoBehaviour {
 
     // update the sprite
     public void UpdateSprite() {
-        GetComponent<SpriteRenderer>().sprite = AlternateSprite;
-        GetComponent<Animator>().runtimeAnimatorController = AlternateAnim;   //TODO need to change to update animator aswell
+        // GetComponent<SpriteRenderer>().sprite = AlternateSprite;     // not needed because sprite anim changes it autamatically
+        GetComponent<Animator>().runtimeAnimatorController = AlternateSpriteAnim;
     }
 
     // allow interactions if player is overlapping this object
