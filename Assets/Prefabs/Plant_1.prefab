@@ -80,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -184315099, guid: bf58736cf64138f4993d8bfd5749f0f2, type: 3}
+  m_Sprite: {fileID: 607536217, guid: bf58736cf64138f4993d8bfd5749f0f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8361544, y: 0.6364252}
+  m_Size: {x: 0.53333336, y: 0.56666666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -250,6 +250,7 @@ MonoBehaviour:
   ProgressRequirement: 0
   SoundEffect: {fileID: 8300000, guid: e5471c856beb850468e1a7480a66ee21, type: 3}
   AlternateSprite: {fileID: 0}
+  AlternateAnim: {fileID: 0}
 --- !u!54 &1593078729204210199
 Rigidbody:
   m_ObjectHideFlags: 0

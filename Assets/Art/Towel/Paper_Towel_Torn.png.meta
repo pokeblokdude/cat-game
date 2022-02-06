@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 79e1227f39c7c1c499ffc31db27100f9
+guid: ea7fbdf69fecfe142b001f3e2d7705ee
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,85 +104,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Plant_2_Spritesheet_0
+      name: Paper_Towel_Torn_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 9
-        width: 257
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 6
+        y: 53
+        width: 226
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a75e047e3eb7d6c4c8ed02e01d7a5858
-      internalID: -1460357108
+      spriteID: 004146008df300f41a82ce8171f60423
+      internalID: 884392978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_2_Spritesheet_1
+      name: Paper_Towel_Torn_1
       rect:
         serializedVersion: 2
-        x: 305
-        y: 9
-        width: 257
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 248
+        y: 54
+        width: 226
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2f3ac6ead716b147923a12ae5cfd093
-      internalID: 220045808
+      spriteID: 509217fef9d2dcc46afe8c8a9172d23e
+      internalID: 1710794489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_2_Spritesheet_2
+      name: Paper_Towel_Torn_2
       rect:
         serializedVersion: 2
-        x: 609
-        y: 5
-        width: 257
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 490
+        y: 54
+        width: 226
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 994b6385cf69f234bbb9927dd111a292
-      internalID: -359720229
+      spriteID: 4b80f48aa66d7a049823f0349195fadc
+      internalID: -1539199254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant_2_Spritesheet_3
+      name: Paper_Towel_Torn_3
       rect:
         serializedVersion: 2
-        x: 913
-        y: 5
-        width: 257
-        height: 189
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 732
+        y: 54
+        width: 226
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e1c2308a0995c246be1d464636d6560
-      internalID: 1448167544
+      spriteID: eee3d7f944dbad746824ee3ad9b388aa
+      internalID: -2090063327
       vertices: []
       indices: 
       edges: []
@@ -190,7 +190,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 49cc1aff60e1010449bf2e7ff2eac129
+    spriteID: ebe0cb9ce04bbe4448dde24604a547ac
     internalID: 0
     vertices: []
     indices: 
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Plant_2_Spritesheet_2: -359720229
-      Plant_2_Spritesheet_1: 220045808
-      Plant_2_Spritesheet_0: -1460357108
-      Plant_2_Spritesheet_3: 1448167544
+      Paper_Towel_Torn_0: 884392978
+      Paper_Towel_Torn_1: 1710794489
+      Paper_Towel_Torn_2: -1539199254
+      Paper_Towel_Torn_3: -2090063327
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
