@@ -11,15 +11,19 @@ public class AudioManager : MonoBehaviour {
     [SerializeField] Slider masterVolumeSlider;
     [SerializeField] Slider musicVolumeSlider;
     [SerializeField] Slider sfxVolumeSlider;
+    [SerializeField] bool inMenu = false;
 
     void Awake() {
-        soundEffects = new List<AudioSource>();
-        AudioSource[] sounds = FindObjectsOfType<AudioSource>();
-        for (int i = 0; i < sounds.Length; i++) {
-            if(!sounds[i].CompareTag("Music")) {
-                soundEffects.Add(sounds[i]);
+        if(!inMenu) {
+            soundEffects = new List<AudioSource>();
+            AudioSource[] sounds = FindObjectsOfType<AudioSource>();
+            for (int i = 0; i < sounds.Length; i++) {
+                if(!sounds[i].CompareTag("Music")) {
+                    soundEffects.Add(sounds[i]);
+                }
             }
         }
+        
         music = GetComponent<AudioSource>();
 
         float masterVolume = PlayerPrefs.GetFloat("MasterVolume");
@@ -28,10 +32,12 @@ public class AudioManager : MonoBehaviour {
         float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
         musicVolumeSlider.value = musicVolume * 100;
         music.volume = musicVolume;
-        float sfxVolume = PlayerPrefs.GetFloat("SfxVolume");
-        sfxVolumeSlider.value = sfxVolume * 100;
-        foreach(AudioSource sound in soundEffects) {
-            sound.volume = sfxVolume;
+        if(!inMenu) {
+            float sfxVolume = PlayerPrefs.GetFloat("SfxVolume");
+            sfxVolumeSlider.value = sfxVolume * 100;
+            foreach(AudioSource sound in soundEffects) {
+                sound.volume = sfxVolume;
+            }
         }
     }
 
@@ -52,8 +58,10 @@ public class AudioManager : MonoBehaviour {
         PlayerPrefs.SetFloat("MusicVolume", vol / 100);
     }
     public void UpdateSfxVolume(float vol) {
-        foreach(AudioSource sound in soundEffects) {
-            sound.volume = vol / 100;
+        if(!inMenu) {
+            foreach(AudioSource sound in soundEffects) {
+                sound.volume = vol / 100;
+            }   
         }
         PlayerPrefs.SetFloat("SfxVolume", vol / 100);
     }
