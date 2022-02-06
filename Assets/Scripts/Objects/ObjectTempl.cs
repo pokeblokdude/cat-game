@@ -19,7 +19,7 @@ public class ObjectTempl : MonoBehaviour
     //function run when player interacts with this object
     public virtual void InteractWithObject()
     {
-        
+        audioSource.PlayOneShot(SoundEffect, 1f);
     }
 
 

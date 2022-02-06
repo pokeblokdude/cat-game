@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: -8423348921245614592}
   - component: {fileID: -4529071500206325805}
   - component: {fileID: -8584385542383910432}
-  - component: {fileID: 2888865160286375033}
+  - component: {fileID: 4598093069060044562}
   m_Layer: 0
-  m_Name: Bucket
+  m_Name: PaperTowel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 625621721, guid: ff9419d04831c1047b0897a623cffd4e, type: 3}
+  m_Sprite: {fileID: -192816358, guid: 83037601ad0702649b582c53859a0898, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 2240522328374201977}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1befc2d0af45d5e458b639126e549f9f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 743e380b9d1bed4438dc7910d8375db5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -217,7 +217,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: -0.5}
---- !u!114 &2888865160286375033
+--- !u!114 &4598093069060044562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,11 +226,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2240522328374201977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d55cece494cf834e8248eea063f84ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b8b3c888ef80a0468f91524df869161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   P: {fileID: 0}
   MaxUses: 100
   ProgressRequirement: 0
-  SoundEffect: {fileID: 8300000, guid: dce74d5bd19640f4bba11b3a224b1e73, type: 3}
-  ToPosition: {fileID: 0}
+  SoundEffect: {fileID: 8300000, guid: c2fe8a6ff51642e4eb6f2c5c6214b6ab, type: 3}
