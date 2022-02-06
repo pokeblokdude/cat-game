@@ -221,9 +221,10 @@ public class Guy : MonoBehaviour {
             case ActionState.GAME_OVER_WALK:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
-                    
+                    walkDirection = -1;
+                    FindObjectOfType<GameManager>().GameOver();
                 }
-                
+                Move(walkDirection);
                 break;
             // =============================================================================== ERROR
             default:

@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField] bool capFramerate = false;
     [SerializeField] GameObject pauseMenuUI;
     [SerializeField] GameObject settingsMenuUI;
-    AudioSource musicSource;
+    AudioManager audioManager;
+    LevelManager levelManager;
+    Player player;
 
     PlayerInput input;
     bool paused = false;
@@ -16,7 +18,9 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         input = FindObjectOfType<PlayerInput>();
-        musicSource = GetComponent<AudioSource>();
+        audioManager = FindObjectOfType<AudioManager>();
+        levelManager = FindObjectOfType<LevelManager>();
+        player = FindObjectOfType<Player>();
         pauseMenuUI.SetActive(false);
     }
 
@@ -34,6 +38,17 @@ public class GameManager : MonoBehaviour {
         if(!input.pause) {
             pausing = false;
         }
+    }
+
+    public void GameOver() {
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait() {
+        player.gameObject.SetActive(false);
+        levelManager.ReloadScene();
+        audioManager.FadeMusic();
+        yield return new WaitForSeconds(2.5f);
     }
 
     public void Pause() {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class AudioManager : MonoBehaviour {
     
@@ -36,6 +37,10 @@ public class AudioManager : MonoBehaviour {
 
     void Start() {
         
+    }
+
+    public void FadeMusic() {
+        music.DOFade(0, 3);
     }
 
     public void UpdateMasterVolume(float vol) {
