@@ -10,6 +10,8 @@ public class Guy : MonoBehaviour {
     [SerializeField] Transform sprite;
     [SerializeField] Vector2 idleTimeRange = new Vector2(0, 10);
     [SerializeField] Vector2 walkTimeRange = new Vector2(0, 10);
+    [SerializeField] float angryTimeTotal = 10;
+    [SerializeField] float angryStopDelay = 2;
 
     EntityController controller;
     Animator anim;
@@ -30,6 +32,11 @@ public class Guy : MonoBehaviour {
     int walkDirection;
     float timeToWalk;
 
+    bool overlappingCat;
+    float overlapCatTimestamp;
+    bool catOutOfRange;
+    float catOutOfRangeTimestamp;
+    
 
     void Awake() {
         controller = GetComponent<EntityController>();
@@ -123,7 +130,38 @@ public class Guy : MonoBehaviour {
             case ActionState.ANGRY:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
+                    anim.SetBool("angry", true);
                 }
+                walkDirection = (int)Mathf.Sign(player.transform.position.x - transform.position.x);
+                if(Mathf.Abs(transform.position.x - player.transform.position.x) > 0.3f) {
+                    overlappingCat = false;
+                    Move(walkDirection);
+                }
+                else {
+                    if(!overlappingCat) {
+                        overlappingCat = true;
+                        overlapCatTimestamp = Time.time;
+                    }
+                    if(Time.time - overlapCatTimestamp > 0.1) {
+                        anim.SetBool("angry", false);
+                        ChangeState(ActionState.PICKING_UP_CAT);
+                    }
+                }
+                // 2.5 = 1st shelf height (ish)
+                if(player.transform.position.y > 2.5f) {
+                    if(!catOutOfRange) {
+                        catOutOfRange = true;
+                        catOutOfRangeTimestamp = Time.time;
+                    }
+                }
+                else {
+                    catOutOfRange = false;
+                }
+                if((catOutOfRange && Time.time - catOutOfRangeTimestamp > angryStopDelay) || Time.time - stateEnterTime > angryTimeTotal) {
+                    anim.SetBool("angry", false);
+                    ChangeState(ActionState.IDLE);
+                }
+
                 break;
             // ======================================================================= NEEDS_TO_FIX_OBJECT
             case ActionState.NEEDS_TO_FIX_OBJECT:
@@ -148,7 +186,12 @@ public class Guy : MonoBehaviour {
                 }
                 if(Time.time - stateEnterTime > interactionTarget.InteractionTime()) {
                     interactionTarget.Reset();
-                    ChangeState(ActionState.IDLE);
+                    if(interactionTarget.WillBonk()) {
+                        ChangeState(ActionState.BONKED);
+                    }
+                    else {
+                        ChangeState(ActionState.IDLE);
+                    }
                     anim.SetBool("fixing", false);
                 }
                 break;
@@ -158,6 +201,29 @@ public class Guy : MonoBehaviour {
                     enteredStateThisFrame = false;
                     anim.SetBool("bonked", true);
                 }
+                if(Time.time - stateEnterTime > 3) {
+                    ChangeState(ActionState.ANGRY);
+                    anim.SetBool("bonked", false);
+                }
+                break;
+            // ============================================================================== PICKING_UP_CAT
+            case ActionState.PICKING_UP_CAT:
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                    anim.SetBool("fixing", true);
+                }
+                if(Time.time - stateEnterTime > 2) {
+                    anim.SetBool("fixing", false);
+                    ChangeState(ActionState.GAME_OVER_WALK);
+                }
+                break;
+            // ============================================================================== GAME_OVER_WALK
+            case ActionState.GAME_OVER_WALK:
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                    
+                }
+                
                 break;
             // =============================================================================== ERROR
             default:
@@ -203,7 +269,8 @@ public class Guy : MonoBehaviour {
         ANGRY,
         NEEDS_TO_FIX_OBJECT,
         FIXING_OBJECT,
-        // unique states
-        BONKED
+        BONKED,
+        PICKING_UP_CAT,
+        GAME_OVER_WALK
     }
 }

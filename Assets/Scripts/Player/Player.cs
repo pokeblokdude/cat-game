@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 
 [RequireComponent(typeof(EntityController))]
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour {
     [SerializeField] Text text;
     [SerializeField] Transform sprite;
     [SerializeField] EntityPhysicsData playerData;
+    LevelManager levelManager;
 
     PlayerInput input;
     EntityController controller;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour {
         controller = GetComponent<EntityController>();
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        levelManager = FindObjectOfType<LevelManager>();
 
         wishVelocity = Vector3.zero;
         actualVelocity = Vector3.zero;
@@ -147,6 +150,11 @@ public class Player : MonoBehaviour {
             sprite.DORotate(new Vector3(0, 180, 0), 0.2f);
         else
             sprite.DORotate(new Vector3(0, 0, 0), 0.2f);
+    }
+
+    public void GameOver() {
+        levelManager.ReloadScene();
+        gameObject.SetActive(false);
     }
 
     void SetDebugText() {

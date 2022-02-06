@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 503992ccaf874e14dab67ff752de4a30
+guid: 2a62eb2780191634f9f6cca49a88a0ca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,13 +140,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_idle_0
+      name: guy_walking_angry_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 8
-        width: 261
-        height: 227
+        x: 112
+        y: 459
+        width: 164
+        height: 337
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,20 +154,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbc4856e4bb417544ace357863abb1e7
-      internalID: 1809013061
+      spriteID: a6f4ea723e6aae3469b44a6325e45e7a
+      internalID: 1671018509
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_idle_1
+      name: guy_walking_angry_1
       rect:
         serializedVersion: 2
-        x: 366
-        y: 2
-        width: 221
-        height: 228
+        x: 335
+        y: 467
+        width: 199
+        height: 320
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e722b223cea7d4478e5d21b7ae37785
-      internalID: 240166654
+      spriteID: bdf4f04e4651f6f46b294b0a436a5f7a
+      internalID: -2119590847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_idle_2
+      name: guy_walking_angry_2
       rect:
         serializedVersion: 2
-        x: 711
-        y: 10
-        width: 209
-        height: 228
+        x: 610
+        y: 469
+        width: 175
+        height: 400
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b55cc8b9d26ecb439d0e7be3bb49646
-      internalID: -881983051
+      spriteID: 5c8c478288e0f5042bdc2a3f1ded6360
+      internalID: -2080620086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_idle_3
+      name: guy_walking_angry_3
       rect:
         serializedVersion: 2
-        x: 1066
-        y: 8
-        width: 260
-        height: 228
+        x: 839
+        y: 468
+        width: 200
+        height: 381
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,8 +217,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dda345280bfed24789d5081d104435f
-      internalID: -1957364477
+      spriteID: 2e72ba1c609d1d64d8330592d304c97a
+      internalID: 959660656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy_walking_angry_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 44
+        width: 156
+        height: 334
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ebf99c6bff29a45bbb9079fce44777
+      internalID: -1796355181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy_walking_angry_5
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 44
+        width: 192
+        height: 317
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee976f6e54255b74680a4ff808e6e794
+      internalID: 1393549693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy_walking_angry_6
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 23
+        width: 207
+        height: 417
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970b7c4ab47870443a885a14906febd1
+      internalID: -957771848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: guy_walking_angry_7
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 32
+        width: 240
+        height: 380
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3057a434f605f04693870bb65a08762
+      internalID: 217515775
       vertices: []
       indices: 
       edges: []
@@ -226,7 +310,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 368cc939342e7bd44918b7ce7f944a8e
+    spriteID: 5436e3dfc6e137a4bac17682899b052a
     internalID: 0
     vertices: []
     indices: 
@@ -234,10 +318,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cat_idle_1: 240166654
-      cat_idle_2: -881983051
-      cat_idle_3: -1957364477
-      cat_idle_0: 1809013061
+      guy_walking_angry_0: 1671018509
+      guy_walking_angry_6: -957771848
+      guy_walking_angry_2: -2080620086
+      guy_walking_angry_1: -2119590847
+      guy_walking_angry_7: 217515775
+      guy_walking_angry_3: 959660656
+      guy_walking_angry_5: 1393549693
+      guy_walking_angry_4: -1796355181
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
