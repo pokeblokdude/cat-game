@@ -78,15 +78,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 37738145d97a0fa489e75a379323fafb, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.6075, y: 0.8325}
+  m_Size: {x: 10.76, y: 21.52}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &-8423348921245614592
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 2240522328374201977}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fd20655a043b00040b79ee99db0016a3, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -246,5 +246,5 @@ MonoBehaviour:
   P: {fileID: 0}
   MaxUses: 100
   ProgressRequirement: 0
-  SoundEffect: {fileID: 8300000, guid: c2fe8a6ff51642e4eb6f2c5c6214b6ab, type: 3}
-  AlternateSpriteAnim: {fileID: 0}
+  SoundEffect: {fileID: 8300000, guid: 31a51863787cc4f4a97ceb1748110beb, type: 3}
+  AlternateSpriteAnim: {fileID: 9100000, guid: fd20655a043b00040b79ee99db0016a3, type: 2}
