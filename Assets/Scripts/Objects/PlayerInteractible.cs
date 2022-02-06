@@ -12,6 +12,8 @@ public class PlayerInteractible : MonoBehaviour {
 
     internal AudioSource audioSource;
 
+    GameObject interactionBubble;
+
     //set up private variables for logic and messing about
     private int useCount = 0;
     private bool isUsing = false;
@@ -33,8 +35,8 @@ public class PlayerInteractible : MonoBehaviour {
         if (other.name == P.name) {
             canInteract = true;
             print("enter");
+            interactionBubble.SetActive(true);
         }
-        
     }
 
     // disable interactions if the player leaves this object
@@ -42,6 +44,7 @@ public class PlayerInteractible : MonoBehaviour {
         if (other.name == P.name) {
             canInteract = false;
             print("leave");
+            interactionBubble.SetActive(false);
         }
     }
 
@@ -49,6 +52,8 @@ public class PlayerInteractible : MonoBehaviour {
     void Start() {
         P = GameObject.Find("Player");
         audioSource = GetComponent<AudioSource>();
+        interactionBubble = transform.GetChild(0).gameObject;
+        interactionBubble.SetActive(false);
     }
 
 
