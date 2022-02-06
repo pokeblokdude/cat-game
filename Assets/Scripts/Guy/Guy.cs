@@ -147,7 +147,7 @@ public class Guy : MonoBehaviour {
                     print("fixing");
                 }
                 if(Time.time - stateEnterTime > interactionTarget.InteractionTime()) {
-                    interactionTarget.tag = "Untagged";
+                    interactionTarget.Reset();
                     ChangeState(ActionState.IDLE);
                     anim.SetBool("fixing", false);
                 }
