@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4d5a1d80844df7b46a143eab134240ef
+guid: 2af31514934cd0640a6bfab7f5c15d2a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 150
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -140,85 +140,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cat_swipe_0
+      name: guy_alert_0
       rect:
         serializedVersion: 2
-        x: 107
-        y: 62
-        width: 356
-        height: 280
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2
+        y: 2
+        width: 174
+        height: 375
+      alignment: 9
+      pivot: {x: 0.44, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9165b2878baf9b14785d74717466a899
-      internalID: -1391215231
+      spriteID: ac8f1b269b38f2f40b461dc26a7fc294
+      internalID: -935634075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cat_swipe_1
+      name: guy_alert_5
       rect:
         serializedVersion: 2
-        x: 543
-        y: 71
-        width: 434
-        height: 280
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 233
+        y: 2
+        width: 174
+        height: 400
+      alignment: 9
+      pivot: {x: 0.44, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f59dfd4f1f8ae54bae97dfa2acfd65b
-      internalID: 664680385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_swipe_2
-      rect:
-        serializedVersion: 2
-        x: 1047
-        y: 74
-        width: 419
-        height: 280
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 214e90afc5d18304991e834e3162fef1
-      internalID: -1899584024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cat_swipe_3
-      rect:
-        serializedVersion: 2
-        x: 1571
-        y: 86
-        width: 386
-        height: 280
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e1399a546d2d3f64d99554ef61d2c92e
-      internalID: -397341249
+      spriteID: fec91e37e43ee324496fe519f9169b90
+      internalID: -705367194
       vertices: []
       indices: 
       edges: []
@@ -226,7 +184,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ad9bca14cc811f747b01e170e631896e
+    spriteID: ebe86247eee718c4cb8345ef893183bb
     internalID: 0
     vertices: []
     indices: 
@@ -234,10 +192,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cat_swipe_0: -1391215231
-      cat_swipe_3: -397341249
-      cat_swipe_2: -1899584024
-      cat_swipe_1: 664680385
+      guy_alert_1: 1979976070
+      guy_alert_5: -705367194
+      guy_alert_4: -1104819156
+      guy_alert_3: 1194561065
+      guy_alert_0: -935634075
+      guy_alert_2: -258117672
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

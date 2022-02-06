@@ -63,7 +63,7 @@ public class Guy : MonoBehaviour {
                 for(int i = 0; i < interactibles.Length; i++) {
                     if(interactibles[i].CompareTag("NeedsFixing")) {
                         interactionTarget = interactibles[i];
-                        ChangeState(ActionState.NEEDS_TO_FIX_OBJECT);
+                        ChangeState(ActionState.ALERTED);
                     }
                 }
                 Move(0);
@@ -88,7 +88,7 @@ public class Guy : MonoBehaviour {
                 for(int i = 0; i < interactibles.Length; i++) {
                     if(interactibles[i].CompareTag("NeedsFixing")) {
                         interactionTarget = interactibles[i];
-                        ChangeState(ActionState.NEEDS_TO_FIX_OBJECT);
+                        ChangeState(ActionState.ALERTED);
                     }
                 }
 
@@ -103,6 +103,20 @@ public class Guy : MonoBehaviour {
             case ActionState.PETTING_CAT:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
+                }
+                break;
+            // ============================================================================ ALERTED
+            case ActionState.ALERTED:
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                    anim.SetBool("alerted", true);
+                    walkDirection = (int)Mathf.Sign(interactionTarget.transform.position.x - transform.position.x);
+                    Move(walkDirection);
+                }
+                // amount of time to be frozen/alerted for
+                if(Time.time - stateEnterTime > 2) {
+                    ChangeState(ActionState.NEEDS_TO_FIX_OBJECT);
+                    anim.SetBool("alerted", false);
                 }
                 break;
             // ================================================================================= ANGRY
@@ -185,6 +199,7 @@ public class Guy : MonoBehaviour {
         AIMLESS_WALK,
         WANTS_TO_PET_CAT,
         PETTING_CAT,
+        ALERTED,
         ANGRY,
         NEEDS_TO_FIX_OBJECT,
         FIXING_OBJECT,
