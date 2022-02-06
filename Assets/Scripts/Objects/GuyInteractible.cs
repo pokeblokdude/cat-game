@@ -5,11 +5,7 @@ using DG.Tweening;
 
 public class GuyInteractible : MonoBehaviour {
     [SerializeField] float interactionTime = 1;
-
-    public float InteractionTime() {
-        return interactionTime;
-    }
-
+    [SerializeField] bool willBonk = false;
 
     RuntimeAnimatorController animControler;
     Vector3 initialPosition;
@@ -18,6 +14,15 @@ public class GuyInteractible : MonoBehaviour {
         animControler = GetComponent<Animator>().runtimeAnimatorController;
         initialPosition = transform.position;
     }
+
+    public float InteractionTime() {
+        return interactionTime;
+    }
+
+    public bool WillBonk() {
+        return willBonk;
+    }
+
     public void Reset () {
         tag = "Untagged";
         GetComponent<Animator>().runtimeAnimatorController = animControler;
