@@ -22,7 +22,7 @@ public class PassableFloor : MonoBehaviour {
             col.enabled = false;
             turnedOffTimestamp = Time.time;
         }
-        if(col.enabled == false && Time.time - turnedOffTimestamp > 0.3f) {
+        if(col.enabled == false && Time.time - turnedOffTimestamp > 0.4f) {
             col.enabled = true;
         }
     }

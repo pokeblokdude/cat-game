@@ -87,7 +87,7 @@ public class Player : MonoBehaviour {
 
     void FixedUpdate() {
         // jump if grounded and not already jumping
-        if(controller.IsGrounded() && input.jump && !jumping && !holdingJump) {
+        if(controller.IsGrounded() && input.jump && !jumping && !holdingJump && !input.down) {
             if(input.crouch && Time.time - crouchStartTime > playerData.chargeTime) {
                 controller.Jump(true);
                 chargedJumping = true;
