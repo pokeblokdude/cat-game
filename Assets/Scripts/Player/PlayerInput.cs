@@ -6,15 +6,22 @@ public class PlayerInput : MonoBehaviour {
     
     InputManager input;
 
+    #region Player Input
     public float moveDir { get; private set; }
     public bool crouch { get; private set; }
     public bool jump { get; private set; }
     public bool down { get; private set; }
     public bool interact { get; private set; }
+    #endregion
+
+    #region Game Input
+    public bool quit { get; private set; }
+    #endregion
 
     void Awake() {
         input = new InputManager();
 
+        #region Player
         input.Player.Move.performed += ctx => {
             moveDir = Mathf.Sign(ctx.ReadValue<float>());
         };
@@ -45,6 +52,16 @@ public class PlayerInput : MonoBehaviour {
         input.Player.Interact.canceled += ctx => {
             interact = false;
         };
+        #endregion
+
+        #region Game
+        input.Game.Quit.performed += ctx => {
+            quit = true;
+        };
+        input.Game.Quit.canceled += ctx => {
+            quit = false;
+        };
+        #endregion
     }
 
     void OnEnable() {
