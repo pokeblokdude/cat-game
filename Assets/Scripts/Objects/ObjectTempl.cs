@@ -15,7 +15,7 @@ public class ObjectTempl : MonoBehaviour
     private bool canInteract = false;
 
     //function run when player interacts with this object
-    void InteractWithObject()
+    public virtual void InteractWithObject()
     {
         
     }
@@ -68,6 +68,7 @@ public class ObjectTempl : MonoBehaviour
             isUsing = true; // player is interaction with us
 
             InteractWithObject();
+            print("test");
 
 
             // update player progress if at the correct progression for this
