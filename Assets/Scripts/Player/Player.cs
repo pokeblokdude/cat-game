@@ -8,6 +8,8 @@ using DG.Tweening;
 [RequireComponent(typeof(PlayerInput))]
 public class Player : MonoBehaviour {
 
+    public bool catIsPettable { get; private set; }
+
     [SerializeField] Text text;
     [SerializeField] Transform sprite;
     [SerializeField] EntityPhysicsData playerData;
@@ -27,6 +29,9 @@ public class Player : MonoBehaviour {
     bool chargedJumping = false;
     bool crouching = false;
     float crouchStartTime;
+
+    bool idle = false;
+    float idleStartTime;
 
     void Awake() {
         input = GetComponent<PlayerInput>();
@@ -105,6 +110,20 @@ public class Player : MonoBehaviour {
         if(controller.IsGrounded() && !jumping) {
             anim.SetBool("grounded", true);
             anim.SetBool("jump", false);
+        }
+
+        if(!idle && controller.IsGrounded() && actualVelocity.x == 0) {
+            idle = true;
+            idleStartTime = Time.time;
+        }
+        if(actualVelocity.x > 0 || !controller.IsGrounded()) {
+            idle = false;
+        }
+        if(idle && Time.time - idleStartTime > 2) {
+            catIsPettable = true;
+        }
+        else {
+            catIsPettable = false;
         }
 
         // play flipping animation if changing directions

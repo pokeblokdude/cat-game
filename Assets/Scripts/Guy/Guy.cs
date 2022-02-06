@@ -13,11 +13,15 @@ public class Guy : MonoBehaviour {
 
     EntityController controller;
     Animator anim;
+    Player player;
     GuyInteractible[] interactibles;
 
-    ActionState actionState;
-
     Vector3 actualVelocity;
+    ActionState actionState;
+    GuyInteractible interactionTarget;
+
+    bool catIsPettable = false;
+
     float stateEnterTime;
     bool enteredStateThisFrame = false;
 
@@ -26,11 +30,11 @@ public class Guy : MonoBehaviour {
     int walkDirection;
     float timeToWalk;
 
-    GuyInteractible interactionTarget;
 
     void Awake() {
         controller = GetComponent<EntityController>();
         anim = GetComponent<Animator>();
+        player = FindObjectOfType<Player>();
         interactibles = FindObjectsOfType<GuyInteractible>();
 
         actionState = ActionState.IDLE;
@@ -50,7 +54,6 @@ public class Guy : MonoBehaviour {
             case ActionState.IDLE:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
-                    anim.SetBool("fixing", false);
                     timeToIdle = Random.Range(idleTimeRange.x, idleTimeRange.y);
                     print("time to idle: " + timeToIdle);
                 }
@@ -132,15 +135,17 @@ public class Guy : MonoBehaviour {
                 if(Time.time - stateEnterTime > interactionTarget.InteractionTime()) {
                     interactionTarget.tag = "Untagged";
                     ChangeState(ActionState.IDLE);
+                    anim.SetBool("fixing", false);
                 }
                 break;
-            // ========================================================================= BUCKET_ON_HEAD
-            case ActionState.BUCKET_ON_HEAD:
+            // ============================================================================== BONKED
+            case ActionState.BONKED:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
+                    anim.SetBool("bonked", true);
                 }
                 break;
-            // ========================================================================= ERROR
+            // =============================================================================== ERROR
             default:
                 throw new System.Exception("Guy entered unkown state");
         }
@@ -184,6 +189,6 @@ public class Guy : MonoBehaviour {
         NEEDS_TO_FIX_OBJECT,
         FIXING_OBJECT,
         // unique states
-        BUCKET_ON_HEAD
+        BONKED
     }
 }
