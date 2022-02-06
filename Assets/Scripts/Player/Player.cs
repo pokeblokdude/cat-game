@@ -50,7 +50,7 @@ public class Player : MonoBehaviour {
     void Update() {
 
         // check if game is over (in this case wether our progress >= 5)
-        if (PlayerPrefs.GetInt("Progress") >= 5) {
+        if (PlayerPrefs.GetInt("Progress") >= 6) {
             FindObjectOfType<GameManager>().PlayCredits();
         }
 
