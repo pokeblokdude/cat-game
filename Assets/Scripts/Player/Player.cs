@@ -80,13 +80,14 @@ public class Player : MonoBehaviour {
         // setting variable for the animation controller
         anim.SetFloat("vSpeed", actualVelocity.y);
         anim.SetFloat("hSpeed", Mathf.Abs(actualVelocity.x));
+        anim.SetBool("grounded", controller.IsGrounded());
 
         SetDebugText();
     }
 
     void FixedUpdate() {
         // jump if grounded and not already jumping
-        if(controller.IsGrounded() && input.jump && !jumping) {
+        if(controller.IsGrounded() && input.jump && !jumping && !holdingJump) {
             if(input.crouch && Time.time - crouchStartTime > playerData.chargeTime) {
                 controller.Jump(true);
                 chargedJumping = true;
@@ -140,6 +141,7 @@ public class Player : MonoBehaviour {
                     $"Velocity: {actualVelocity.ToString("f2")}\n" +
                     $"WishVel: {wishVelocity.ToString("f3")}\n" +
                     $"Grounded: {controller.IsGrounded()}\n" +
+                    $"Touching Wall: {controller.TouchingWall()}\n" +
                     $"Jumping: {jumping}\n" +
                     $"Charged: {input.crouch &&  Time.time - crouchStartTime > playerData.chargeTime}\n\n" +
                     $"progress: {PlayerPrefs.GetInt("Progress")}"
