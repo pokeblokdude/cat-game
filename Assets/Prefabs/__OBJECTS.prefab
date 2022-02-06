@@ -249,6 +249,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6127705476997413011, guid: 4680a1f4110b95742afb77de3c049f6f,
+        type: 3}
+      propertyPath: interactionTime
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8832063731968045635, guid: 4680a1f4110b95742afb77de3c049f6f,
         type: 3}
       propertyPath: ProgressRequirement
@@ -269,6 +274,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2334226257682608947}
     m_Modifications:
+    - target: {fileID: 330217232423030798, guid: 58b923b3de5793c4aa594dd2825d16ef,
+        type: 3}
+      propertyPath: interactionTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2240522328374201977, guid: 58b923b3de5793c4aa594dd2825d16ef,
         type: 3}
       propertyPath: m_Name
@@ -419,6 +429,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9159481027900718924, guid: da6e8d4555ecc284797693d69b2e9a76,
+        type: 3}
+      propertyPath: interactionTime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6e8d4555ecc284797693d69b2e9a76, type: 3}
 --- !u!4 &6368413254486110768 stripped
@@ -503,6 +518,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9159481027900718924, guid: 0d57ae65738d8094f955d6a5162792f3,
+        type: 3}
+      propertyPath: interactionTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d57ae65738d8094f955d6a5162792f3, type: 3}
@@ -614,6 +634,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2334226257682608947}
     m_Modifications:
+    - target: {fileID: 489985544616593560, guid: 23668cbd388b0444391e3d08c09b0274,
+        type: 3}
+      propertyPath: interactionTime
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 2240522328374201977, guid: 23668cbd388b0444391e3d08c09b0274,
         type: 3}
       propertyPath: m_Name
