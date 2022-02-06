@@ -143,8 +143,8 @@ TextureImporter:
       name: cat_idle_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 11
+        x: 13
+        y: 8
         width: 261
         height: 227
       alignment: 7
@@ -164,8 +164,8 @@ TextureImporter:
       name: cat_idle_1
       rect:
         serializedVersion: 2
-        x: 397
-        y: 12
+        x: 366
+        y: 2
         width: 221
         height: 228
       alignment: 7
@@ -185,8 +185,8 @@ TextureImporter:
       name: cat_idle_2
       rect:
         serializedVersion: 2
-        x: 766
-        y: 2
+        x: 711
+        y: 10
         width: 209
         height: 228
       alignment: 7
@@ -206,8 +206,8 @@ TextureImporter:
       name: cat_idle_3
       rect:
         serializedVersion: 2
-        x: 1080
-        y: 9
+        x: 1066
+        y: 8
         width: 260
         height: 228
       alignment: 7

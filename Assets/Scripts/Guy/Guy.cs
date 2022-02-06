@@ -142,7 +142,7 @@ public class Guy : MonoBehaviour {
                         overlappingCat = true;
                         overlapCatTimestamp = Time.time;
                     }
-                    if(Time.time - overlapCatTimestamp > 0.2) {
+                    if(Time.time - overlapCatTimestamp > 0.1) {
                         anim.SetBool("angry", false);
                         ChangeState(ActionState.PICKING_UP_CAT);
                     }
@@ -210,8 +210,20 @@ public class Guy : MonoBehaviour {
             case ActionState.PICKING_UP_CAT:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
-                    anim.SetBool("working", true);
+                    anim.SetBool("fixing", true);
                 }
+                if(Time.time - stateEnterTime > 2) {
+                    anim.SetBool("fixing", false);
+                    ChangeState(ActionState.GAME_OVER_WALK);
+                }
+                break;
+            // ============================================================================== GAME_OVER_WALK
+            case ActionState.GAME_OVER_WALK:
+                if(enteredStateThisFrame) {
+                    enteredStateThisFrame = false;
+                    
+                }
+                
                 break;
             // =============================================================================== ERROR
             default:
@@ -258,6 +270,7 @@ public class Guy : MonoBehaviour {
         NEEDS_TO_FIX_OBJECT,
         FIXING_OBJECT,
         BONKED,
-        PICKING_UP_CAT
+        PICKING_UP_CAT,
+        GAME_OVER_WALK
     }
 }
