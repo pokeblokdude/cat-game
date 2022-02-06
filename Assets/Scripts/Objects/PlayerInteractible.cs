@@ -10,6 +10,8 @@ public class PlayerInteractible : MonoBehaviour {
     public AudioClip SoundEffect;
     public RuntimeAnimatorController AlternateSpriteAnim;
 
+    public bool isMoved = false;
+
     internal AudioSource audioSource;
 
     GameObject interactionBubble;
