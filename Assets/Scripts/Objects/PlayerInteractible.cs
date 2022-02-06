@@ -9,6 +9,7 @@ public class PlayerInteractible : MonoBehaviour {
     public int ProgressRequirement;
     public AudioClip SoundEffect;
     public Sprite AlternateSprite;
+    public RuntimeAnimatorController AlternateAnim;
 
     internal AudioSource audioSource;
 
@@ -25,7 +26,7 @@ public class PlayerInteractible : MonoBehaviour {
     // update the sprite
     public void UpdateSprite() {
         GetComponent<SpriteRenderer>().sprite = AlternateSprite;
-        GetComponent<Animator>().enabled = false;   //TODO need to change to update animator aswell
+        GetComponent<Animator>().runtimeAnimatorController = AlternateAnim;   //TODO need to change to update animator aswell
     }
 
     // allow interactions if player is overlapping this object
