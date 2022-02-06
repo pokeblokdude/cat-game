@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: -8423348921245614592}
   - component: {fileID: -4529071500206325805}
   - component: {fileID: -8584385542383910432}
-  - component: {fileID: 4598093069060044562}
   - component: {fileID: 330217232423030798}
+  - component: {fileID: 7343360027221010763}
   m_Layer: 0
   m_Name: PaperTowel
   m_TagString: Untagged
@@ -218,22 +218,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: -0.5}
---- !u!114 &4598093069060044562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2240522328374201977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b8b3c888ef80a0468f91524df869161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  P: {fileID: 0}
-  MaxUses: 100
-  ProgressRequirement: 0
-  SoundEffect: {fileID: 8300000, guid: c2fe8a6ff51642e4eb6f2c5c6214b6ab, type: 3}
 --- !u!114 &330217232423030798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,3 +230,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602cc706223ab954badaf0cab3991da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionTime: 1
+--- !u!114 &7343360027221010763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240522328374201977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c5c38b4a7876aa4aa65b720ff6b61aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P: {fileID: 0}
+  MaxUses: 100
+  ProgressRequirement: 0
+  SoundEffect: {fileID: 8300000, guid: c2fe8a6ff51642e4eb6f2c5c6214b6ab, type: 3}
+  AlternateSprite: {fileID: 886398476, guid: 92e03555e2fe29741ac278e6fe8ab6e0, type: 3}

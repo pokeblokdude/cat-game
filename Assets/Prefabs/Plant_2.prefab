@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: -8423348921245614592}
   - component: {fileID: -4529071500206325805}
   - component: {fileID: -8584385542383910432}
-  - component: {fileID: 4598093069060044562}
   - component: {fileID: 6127705476997413011}
+  - component: {fileID: 6843911871762743872}
+  - component: {fileID: 8832063731968045635}
+  - component: {fileID: 8824206182870470335}
   m_Layer: 0
   m_Name: Plant_2
   m_TagString: Untagged
@@ -218,22 +220,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: -0.5}
---- !u!114 &4598093069060044562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2240522328374201977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b8b3c888ef80a0468f91524df869161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  P: {fileID: 0}
-  MaxUses: 100
-  ProgressRequirement: 0
-  SoundEffect: {fileID: 8300000, guid: e5471c856beb850468e1a7480a66ee21, type: 3}
 --- !u!114 &6127705476997413011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,3 +232,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602cc706223ab954badaf0cab3991da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionTime: 1
+--- !u!54 &6843911871762743872
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240522328374201977}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &8832063731968045635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240522328374201977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b980d57e4c08549bf5f5bf709caf07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P: {fileID: 0}
+  MaxUses: 100
+  ProgressRequirement: 0
+  SoundEffect: {fileID: 8300000, guid: e5471c856beb850468e1a7480a66ee21, type: 3}
+  AlternateSprite: {fileID: 0}
+--- !u!65 &8824206182870470335
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240522328374201977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.028, y: 0.41, z: 0.2}
+  m_Center: {x: 0, y: 0.15, z: 0.2}
