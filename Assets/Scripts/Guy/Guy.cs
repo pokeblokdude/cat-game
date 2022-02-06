@@ -9,6 +9,7 @@ public class Guy : MonoBehaviour {
     [SerializeField] EntityPhysicsData guyData;
     [SerializeField] Transform sprite;
     [SerializeField] Vector2 idleTimeRange = new Vector2(0, 10);
+    [SerializeField] Vector2 walkTimeRange = new Vector2(0, 10);
 
     EntityController controller;
     Animator anim;
@@ -22,6 +23,7 @@ public class Guy : MonoBehaviour {
     float timeToIdle;
 
     int walkDirection;
+    float timeToWalk;
 
     void Awake() {
         controller = GetComponent<EntityController>();
@@ -46,14 +48,26 @@ public class Guy : MonoBehaviour {
                 if(Time.time - stateEnterTime > timeToIdle) {
                     ChangeState(ActionState.AIMLESS_WALK);
                 }
+                Move(0);
                 break;
             // =============================================================
             case ActionState.AIMLESS_WALK:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
                     walkDirection = (int)Mathf.Sign(Random.Range(-1, 1));
+
+                    timeToWalk = Random.Range(walkTimeRange.x, walkTimeRange.y);
+                    print("time to walk: " + timeToWalk);
                 }
-                Walk(walkDirection);
+                if(controller.TouchingWall() != 0) {
+                    walkDirection = -walkDirection;
+                }
+                Move(walkDirection);
+
+                if(Time.time - stateEnterTime > timeToWalk) {
+                    ChangeState(ActionState.IDLE);
+                }
+
                 break;
             // =====================================================================
             case ActionState.WANTS_TO_PET_CAT:
@@ -94,7 +108,7 @@ public class Guy : MonoBehaviour {
         enteredStateThisFrame = true;
     }
 
-    void Walk(int dir) {
+    void Move(int dir) {
         // play flipping animation if changing directions
         if(dir == 1 && Mathf.Abs(sprite.rotation.eulerAngles.y) == 180) {
             FlipSprite();

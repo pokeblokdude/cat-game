@@ -11,6 +11,7 @@ public class EntityController : MonoBehaviour {
     CapsuleCollider col;
 
     int facing = 1;
+    int touchingWall = 0;
     bool grounded;
     bool landedThisFrame = false;
 
@@ -33,6 +34,10 @@ public class EntityController : MonoBehaviour {
             grounded = false;
         }
         rb.drag = grounded ? entityPhysicsData.groundDrag : entityPhysicsData.airDrag;
+
+        bool wall = Physics.Raycast(transform.position + col.center, Vector3.right * facing, col.radius + 0.1f, collisionMask);
+        Debug.DrawRay(transform.position + col.center, Vector3.right * col.radius * facing, Color.red, Time.deltaTime);
+        touchingWall = (wall ? 1 : 0) * facing;
     }
 
     public Vector3 Move(Vector3 moveAmount) {
@@ -70,4 +75,7 @@ public class EntityController : MonoBehaviour {
         return landedThisFrame;
     }
 
+    public int TouchingWall() {
+        return touchingWall;
+    }
 }
