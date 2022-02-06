@@ -83,7 +83,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8361544, y: 0.6364252}
+  m_Size: {x: 0.6075, y: 0.8325}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -247,5 +247,5 @@ MonoBehaviour:
   MaxUses: 100
   ProgressRequirement: 0
   SoundEffect: {fileID: 8300000, guid: c2fe8a6ff51642e4eb6f2c5c6214b6ab, type: 3}
-  AlternateSprite: {fileID: 884392978, guid: ea7fbdf69fecfe142b001f3e2d7705ee, type: 3}
+  AlternateSprite: {fileID: 0}
   AlternateAnim: {fileID: 9100000, guid: c85c1071f69e9e34da5526919eb3563c, type: 2}
