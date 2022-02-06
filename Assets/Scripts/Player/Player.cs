@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 using DG.Tweening;
 
 [RequireComponent(typeof(EntityController))]
 [RequireComponent(typeof(PlayerInput))]
 public class Player : MonoBehaviour {
 
-    public UnityEvent<bool> catIsPettable;
+    public bool catIsPettable { get; private set; }
 
     [SerializeField] Text text;
     [SerializeField] Transform sprite;
@@ -121,7 +120,10 @@ public class Player : MonoBehaviour {
             idle = false;
         }
         if(idle && Time.time - idleStartTime > 2) {
-            catIsPettable.Invoke(true);
+            catIsPettable = true;
+        }
+        else {
+            catIsPettable = false;
         }
 
         // play flipping animation if changing directions

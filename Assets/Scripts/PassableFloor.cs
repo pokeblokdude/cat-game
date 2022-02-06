@@ -31,7 +31,7 @@ public class PassableFloor : MonoBehaviour {
             playerIsStandingOn = false;    
         }
         if(playerIsStandingOn) {
-            print(name + "player standing");
+            //print(name + "player standing");
         }
         if(input.down && input.jump && playerIsStandingOn) {
             col.enabled = false;
