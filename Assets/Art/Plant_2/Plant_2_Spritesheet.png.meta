@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 250
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f2d7ec7cab01d742806e334083e5668
-      internalID: -437691309
+      spriteID: a75e047e3eb7d6c4c8ed02e01d7a5858
+      internalID: -1460357108
       vertices: []
       indices: 
       edges: []
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d382b15900d14784b8e343e8edfa5346
-      internalID: -1187641688
+      spriteID: b2f3ac6ead716b147923a12ae5cfd093
+      internalID: 220045808
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10d04a03b72f1eb4cb08f9b608364af3
-      internalID: -106201510
+      spriteID: 994b6385cf69f234bbb9927dd111a292
+      internalID: -359720229
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d9f0e4dbae19784e8d61c2f1b085f37
-      internalID: -2029209535
+      spriteID: 2e1c2308a0995c246be1d464636d6560
+      internalID: 1448167544
       vertices: []
       indices: 
       edges: []
@@ -190,7 +190,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 61916eaca62f19d4d8d5eaabec625aed
+    spriteID: 49cc1aff60e1010449bf2e7ff2eac129
     internalID: 0
     vertices: []
     indices: 
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Plant_2_Spritesheet_2: -106201510
-      Plant_2_Spritesheet_1: -1187641688
-      Plant_2_Spritesheet_0: -437691309
-      Plant_2_Spritesheet_3: -2029209535
+      Plant_2_Spritesheet_2: -359720229
+      Plant_2_Spritesheet_1: 220045808
+      Plant_2_Spritesheet_0: -1460357108
+      Plant_2_Spritesheet_3: 1448167544
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
