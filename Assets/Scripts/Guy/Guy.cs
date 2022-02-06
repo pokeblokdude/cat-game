@@ -135,7 +135,7 @@ public class Guy : MonoBehaviour {
                 }
                 break;
             // ========================================================================= BUCKET_ON_HEAD
-            case ActionState.BUCKET_ON_HEAD:
+            case ActionState.BONKED:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
                 }
@@ -184,6 +184,6 @@ public class Guy : MonoBehaviour {
         NEEDS_TO_FIX_OBJECT,
         FIXING_OBJECT,
         // unique states
-        BUCKET_ON_HEAD
+        BONKED
     }
 }
