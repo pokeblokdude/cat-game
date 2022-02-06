@@ -15,7 +15,7 @@ public class PlayerInput : MonoBehaviour {
     #endregion
 
     #region Game Input
-    public bool quit { get; private set; }
+    public bool pause { get; private set; }
     #endregion
 
     void Awake() {
@@ -55,11 +55,11 @@ public class PlayerInput : MonoBehaviour {
         #endregion
 
         #region Game
-        input.Game.Quit.performed += ctx => {
-            quit = true;
+        input.Game.Pause.performed += ctx => {
+            pause = true;
         };
-        input.Game.Quit.canceled += ctx => {
-            quit = false;
+        input.Game.Pause.canceled += ctx => {
+            pause = false;
         };
         #endregion
     }
