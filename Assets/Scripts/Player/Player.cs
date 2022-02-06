@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using DG.Tweening;
 
 [RequireComponent(typeof(EntityController))]
 [RequireComponent(typeof(PlayerInput))]
 public class Player : MonoBehaviour {
+
+    public UnityEvent<bool> catIsPettable;
 
     [SerializeField] Text text;
     [SerializeField] Transform sprite;
@@ -27,6 +30,9 @@ public class Player : MonoBehaviour {
     bool chargedJumping = false;
     bool crouching = false;
     float crouchStartTime;
+
+    bool idle = false;
+    float idleStartTime;
 
     void Awake() {
         input = GetComponent<PlayerInput>();
@@ -105,6 +111,17 @@ public class Player : MonoBehaviour {
         if(controller.IsGrounded() && !jumping) {
             anim.SetBool("grounded", true);
             anim.SetBool("jump", false);
+        }
+
+        if(!idle && controller.IsGrounded() && actualVelocity.x == 0) {
+            idle = true;
+            idleStartTime = Time.time;
+        }
+        if(actualVelocity.x > 0 || !controller.IsGrounded()) {
+            idle = false;
+        }
+        if(idle && Time.time - idleStartTime > 2) {
+            catIsPettable.Invoke(true);
         }
 
         // play flipping animation if changing directions

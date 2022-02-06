@@ -15,9 +15,12 @@ public class Guy : MonoBehaviour {
     Animator anim;
     GuyInteractible[] interactibles;
 
-    ActionState actionState;
-
     Vector3 actualVelocity;
+    ActionState actionState;
+    GuyInteractible interactionTarget;
+
+    bool catIsPettable = false;
+
     float stateEnterTime;
     bool enteredStateThisFrame = false;
 
@@ -26,7 +29,6 @@ public class Guy : MonoBehaviour {
     int walkDirection;
     float timeToWalk;
 
-    GuyInteractible interactionTarget;
 
     void Awake() {
         controller = GetComponent<EntityController>();
