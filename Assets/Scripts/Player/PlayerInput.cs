@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour {
     public float moveDir { get; private set; }
     public bool crouch { get; private set; }
     public bool jump { get; private set; }
+    public bool down { get; private set; }
     public bool interact { get; private set; }
 
     void Awake() {
@@ -31,6 +32,12 @@ public class PlayerInput : MonoBehaviour {
         };
         input.Player.Jump.canceled += ctx => {
             jump = false;
+        };
+        input.Player.Down.performed += ctx => {
+            down = true;
+        };
+        input.Player.Down.canceled += ctx => {
+            down = false;
         };
         input.Player.Interact.performed += ctx => {
             interact = true;

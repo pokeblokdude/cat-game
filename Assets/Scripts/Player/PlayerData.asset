@@ -16,7 +16,7 @@ MonoBehaviour:
   airDrag: 0.5
   moveSpeed: 1
   airMoveSpeedMultiplier: 0.05
-  jumpForce: 8
+  jumpForce: 7
   jumpTime: 0.3
   chargedJumpForce: 16
   chargeTime: 0.4
