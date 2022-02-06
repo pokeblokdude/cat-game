@@ -13,10 +13,11 @@ public class Water : PlayerInteractible
     }
     public override void InteractWithObject ()
     {
-        // if (pen.GetComponent<Bucket>().isMoved) {
-        //     anim.SetBool()
-        // }
         UpdateSprite();
+        if (pen.GetComponent<Bucket>().isMoved) {
+            anim.SetBool("clogged", true);
+            print("asdfasdfasdfasdfasd");
+        }
         // pen.GetComponent<Bucket>().isMoved
     }
 }
