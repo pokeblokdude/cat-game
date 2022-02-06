@@ -7,7 +7,9 @@ public class ObjectTempl : MonoBehaviour
     public GameObject P;    // get a reference to the player
     public int MaxUses = 100; // set the default max number of uses for this object
     public int ProgressRequirement;
+    public AudioClip SoundEffect;
 
+    internal AudioSource audioSource;
 
     //set up private variables for logic and messing about
     private int useCount = 0;
@@ -49,8 +51,8 @@ public class ObjectTempl : MonoBehaviour
     void Start()
     {
         P = GameObject.Find("Player");
+        audioSource = GetComponent<AudioSource>();
     }
-
 
 
     void Update()

@@ -5,11 +5,18 @@ using DG.Tweening;
 
 public class Bucket : ObjectTempl
 {
-
     [SerializeField] Transform ToPosition;
+
+
+    
+
+
+
     public override void InteractWithObject ()
     {
-        DOTween.Sequence().Append(transform.DOMoveX(ToPosition.position.x, 0.6f))
-            .Append(transform.DOMoveY(ToPosition.position.y, 0.6f));
+        DOTween.Sequence().Append(transform.DOMoveX(ToPosition.position.x, 0.6f).SetEase(Ease.InQuad))
+                          .Append(transform.DOMoveY(ToPosition.position.y, 0.6f).SetEase(Ease.InQuad));
+        audioSource.PlayOneShot(SoundEffect, 10f);
     }
+
 }
