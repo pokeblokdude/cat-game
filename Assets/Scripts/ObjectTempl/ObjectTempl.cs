@@ -5,22 +5,19 @@ using UnityEngine;
 public class ObjectTempl : MonoBehaviour
 {
     public GameObject P;    // get a reference to the player
-    public int MaxUses = 1; // set the default max number of uses for this object
+    public int MaxUses = 100; // set the default max number of uses for this object
     public int ProgressRequirement;
 
 
     //set up private variables for logic and messing about
     private int useCount = 0;
-    private Vector3 objScale;
     private bool isUsing = false;
     private bool canInteract = false;
 
     //function run when player interacts with this object
     void InteractWithObject()
     {
-
-        objScale = gameObject.transform.localScale;
-        gameObject.transform.localScale = new Vector3(objScale.x, objScale.y*2, objScale.z);
+        
     }
 
 
