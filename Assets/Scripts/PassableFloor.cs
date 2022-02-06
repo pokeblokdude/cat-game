@@ -16,7 +16,7 @@ public class PassableFloor : MonoBehaviour {
 
     void Update() {
         if(playerIsStandingOn) {
-            print("player standing");
+            print(name + "player standing");
         }
         if(input.down && input.jump && playerIsStandingOn) {
             col.enabled = false;
@@ -32,7 +32,7 @@ public class PassableFloor : MonoBehaviour {
             playerIsStandingOn = true;
         }
     }
-    void OnCollisionExit(Collision collision) {
+    void OnCollisionExit() {
         playerIsStandingOn = false;
     }
 }
