@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] int frameCap = 60;
     [SerializeField] bool capFramerate = false;
     [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] GameObject settingsMenuUI;
     AudioSource musicSource;
 
     PlayerInput input;
@@ -37,23 +38,36 @@ public class GameManager : MonoBehaviour {
 
     public void Pause() {
         if(paused) {
-            pauseMenuUI.SetActive(false);
-            Time.timeScale = 1;
-            paused = false;
+            if(settingsMenuUI.activeSelf) {
+                LoadPauseMenuFromSettings();
+            }
+            else {
+                PlayerPrefs.Save();
+                pauseMenuUI.SetActive(false);
+                Time.timeScale = 1;
+                paused = false;
+            }
         }
         else {
             pauseMenuUI.SetActive(true);
+            settingsMenuUI.SetActive(false);
             Time.timeScale = 0;
             paused = true;
         }
+    }
+
+    public void LoadPauseMenuFromSettings() {
+        settingsMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(true);
+    }
+
+    public void LoadSettingsPage() {
+        pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(true);
     }
 
     public void Quit() {
         Application.Quit();
     }
 
-    public void UpdateMusicVolume(float vol) {
-        musicSource.volume = vol / 100;
-        PlayerPrefs.SetFloat("MusicVolume", vol / 100);
-    }
 }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - NeedsFixing
+  - Music
   layers:
   - Default
   - TransparentFX
