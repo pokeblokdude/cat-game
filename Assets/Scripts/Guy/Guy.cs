@@ -50,9 +50,6 @@ public class Guy : MonoBehaviour {
     void Start() {
         stateEnterTime = Time.time;
         enteredStateThisFrame = true;
-        for(int i = 0; i < interactibles.Length; i++) {
-            print(interactibles[i].name);
-        }
     }
 
     void FixedUpdate() {
@@ -167,7 +164,7 @@ public class Guy : MonoBehaviour {
             case ActionState.NEEDS_TO_FIX_OBJECT:
                 if(enteredStateThisFrame) {
                     enteredStateThisFrame = false;
-                    print("need to fix");
+                    //print("need to fix");
                 }
                 walkDirection = (int)Mathf.Sign(interactionTarget.transform.position.x - transform.position.x);
                 if(Mathf.Abs(transform.position.x - interactionTarget.transform.position.x) > 0.1f) {

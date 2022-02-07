@@ -13,11 +13,16 @@ public class LevelManager : MonoBehaviour {
     }
 
     void Start() {
+        StartCoroutine(LevelLoadDelay());
+    }
+
+    IEnumerator LevelLoadDelay() {
+        yield return new WaitForSeconds(0.5f);
         transitionUI.PlayEnter();
     }
 
     public void LoadMenu() {
-        StartCoroutine(LoadLevel(0, 0));
+        StartCoroutine(LoadLevel(0, 2.5f));
     }
 
     public void ReloadScene() {

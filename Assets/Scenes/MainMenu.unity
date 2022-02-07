@@ -183,7 +183,6 @@ MonoBehaviour:
   capFramerate: 0
   menuCanvas: {fileID: 1602806295}
   settingsMenuUI: {fileID: 1520694478}
-  transitionUI: {fileID: 551005169}
 --- !u!1 &80537346
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,18 +771,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469879929}
   m_CullTransparentMesh: 1
---- !u!114 &551005169 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5411547053449402641, guid: 94a7732afb3ff524d95d2c4c144dc7cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706755745}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e07ffc7e0c5603549a935b8c0ca537ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &585630270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,25 +1003,6 @@ MonoBehaviour:
     type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
---- !u!1 &1311117243 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5411547053804055325, guid: 94a7732afb3ff524d95d2c4c144dc7cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1706755745}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1311117248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311117243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc55907469cfa9345a128defba990846, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectID: 
 --- !u!114 &1335293723 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6129648344695740756, guid: 614094c439e57f44daa59eba448da0fa,

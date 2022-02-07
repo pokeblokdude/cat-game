@@ -18,6 +18,11 @@ public class MenuManager : MonoBehaviour {
         transitionUI = FindObjectOfType<TransitionUI>();
         menuCanvas.SetActive(true);
         settingsMenuUI.SetActive(false);
+        StartCoroutine(LevelLoadDelay());
+    }
+
+    IEnumerator LevelLoadDelay() {
+        yield return new WaitForSeconds(0.5f);
         transitionUI.PlayEnter();
     }
 

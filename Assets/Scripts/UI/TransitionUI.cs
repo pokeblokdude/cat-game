@@ -9,15 +9,18 @@ public class TransitionUI : MonoBehaviour {
 
     void Awake() {
         group = GetComponent<CanvasGroup>();
+    }
+
+    void Start() {
         group.alpha = 1;
     }
 
     public void Play() {
-        print("playing fade");
         group.DOFade(1, 1).SetUpdate(true);
     }
 
     public void PlayEnter() {
+        print("play enter fade");
         group.DOFade(0, 1).SetUpdate(true);
     }
 }

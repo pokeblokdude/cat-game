@@ -58,7 +58,6 @@ public class PlayerInteractible : MonoBehaviour {
         interactionBubble.SetActive(false);
     }
 
-
     void Update() {
         // if the player is trying to interact and 
         // we are bellow the max uses and 
