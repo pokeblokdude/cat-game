@@ -250,6 +250,7 @@ MonoBehaviour:
   ProgressRequirement: 4
   SoundEffect: {fileID: 8300000, guid: a67df88fae1e9a54aa3dd30ed1f255c9, type: 3}
   AlternateSpriteAnim: {fileID: 9100000, guid: 6a67c0d79353ef8469cc86a794d4f737, type: 2}
+  isMoved: 0
 --- !u!1 &5192550691398920628
 GameObject:
   m_ObjectHideFlags: 0
