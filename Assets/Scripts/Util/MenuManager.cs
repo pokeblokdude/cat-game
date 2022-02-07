@@ -9,14 +9,16 @@ public class MenuManager : MonoBehaviour {
     [SerializeField] bool capFramerate = false;
     [SerializeField] GameObject menuCanvas;
     [SerializeField] GameObject settingsMenuUI;
-    [SerializeField] TransitionUI transitionUI;
+    TransitionUI transitionUI;
     AudioManager audioManager;
     Player player;
 
     void Start() {
         audioManager = FindObjectOfType<AudioManager>();
+        transitionUI = FindObjectOfType<TransitionUI>();
         menuCanvas.SetActive(true);
         settingsMenuUI.SetActive(false);
+        transitionUI.PlayEnter();
     }
 
     void Update() {
@@ -36,8 +38,8 @@ public class MenuManager : MonoBehaviour {
         PlayerPrefs.Save();
         transitionUI.Play();
         audioManager.FadeMusic();
-        SceneManager.LoadScene(1);
         yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene(1);
     }
 
     public void LoadMenuFromSettings() {

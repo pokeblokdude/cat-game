@@ -5,23 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
     
-    [SerializeField] TransitionUI transitionUI;
+    TransitionUI transitionUI;
 
     void Awake() {
+        transitionUI = FindObjectOfType<TransitionUI>();
         transitionUI.gameObject.SetActive(true);
     }
 
+    void Start() {
+        transitionUI.PlayEnter();
+    }
+
     public void LoadMenu() {
-        StartCoroutine(LoadLevel(0));
+        StartCoroutine(LoadLevel(0, 0));
     }
 
     public void ReloadScene() {
-        StartCoroutine(LoadLevel(1));
+        StartCoroutine(LoadLevel(1, 2.5f));
     }
 
-    IEnumerator LoadLevel(int index) {
+    IEnumerator LoadLevel(int index, float time) {
         transitionUI.Play();
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(time);
         SceneManager.LoadScene(index);
     }
 

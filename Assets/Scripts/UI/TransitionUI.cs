@@ -12,11 +12,12 @@ public class TransitionUI : MonoBehaviour {
         group.alpha = 1;
     }
 
-    void Start() {
-        group.DOFade(0, 1).SetUpdate(true);
+    public void Play() {
+        print("playing fade");
+        group.DOFade(1, 1).SetUpdate(true);
     }
 
-    public void Play() {
-        group.DOFade(1, 1).SetUpdate(true);
+    public void PlayEnter() {
+        group.DOFade(0, 1).SetUpdate(true);
     }
 }

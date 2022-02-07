@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour {
     public void ExitToMenu() {
         levelManager.LoadMenu();
         audioManager.FadeMusic();
+        Time.timeScale = 1;
     }
 
     public void GameOver() {
