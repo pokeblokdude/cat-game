@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour {
         transitionUI = FindObjectOfType<TransitionUI>();
         menuCanvas.SetActive(true);
         settingsMenuUI.SetActive(false);
+        transitionUI.gameObject.SetActive(true);
         StartCoroutine(LevelLoadDelay());
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -38,14 +39,18 @@ public class MenuManager : MonoBehaviour {
     }
 
     public void StartGame() {
-        StartCoroutine(Wait());
+        StartCoroutine(Wait(1));
     }
 
-    IEnumerator Wait() {
+    public void LoadCredits() {
+        StartCoroutine(Wait(2));
+    }
+
+    IEnumerator Wait(int index) {
         transitionUI.Play();
         audioManager.FadeMusic();
         yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(index);
     }
 
     public void LoadMenuFromSettings() {
