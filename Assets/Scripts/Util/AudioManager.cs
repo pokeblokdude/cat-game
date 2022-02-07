@@ -26,14 +26,14 @@ public class AudioManager : MonoBehaviour {
         
         music = GetComponent<AudioSource>();
 
-        float masterVolume = PlayerPrefs.GetFloat("MasterVolume");
+        float masterVolume = PlayerPrefs.HasKey("MasterVolume") ? PlayerPrefs.GetFloat("MasterVolume") : 1;
         masterVolumeSlider.value = masterVolume * 100;
         AudioListener.volume = masterVolume;
-        float musicVolume = PlayerPrefs.GetFloat("MusicVolume");
+        float musicVolume = PlayerPrefs.HasKey("MusicVolume") ? PlayerPrefs.GetFloat("MusicVolume") : 1;
         musicVolumeSlider.value = musicVolume * 100;
         music.volume = musicVolume;
         if(!inMenu) {
-            float sfxVolume = PlayerPrefs.GetFloat("SfxVolume");
+            float sfxVolume = PlayerPrefs.HasKey("SfxVolume") ? PlayerPrefs.GetFloat("SfxVolume") : 1;
             sfxVolumeSlider.value = sfxVolume * 100;
             foreach(AudioSource sound in soundEffects) {
                 sound.volume = sfxVolume;

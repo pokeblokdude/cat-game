@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour {
         levelManager = FindObjectOfType<LevelManager>();
         player = FindObjectOfType<Player>();
         pauseMenuUI.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update() {
@@ -71,6 +74,8 @@ public class GameManager : MonoBehaviour {
                 pauseMenuUI.SetActive(false);
                 Time.timeScale = 1;
                 paused = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
         else {
@@ -78,6 +83,8 @@ public class GameManager : MonoBehaviour {
             settingsMenuUI.SetActive(false);
             Time.timeScale = 0;
             paused = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 

@@ -19,6 +19,8 @@ public class MenuManager : MonoBehaviour {
         menuCanvas.SetActive(true);
         settingsMenuUI.SetActive(false);
         StartCoroutine(LevelLoadDelay());
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     IEnumerator LevelLoadDelay() {
@@ -40,7 +42,6 @@ public class MenuManager : MonoBehaviour {
     }
 
     IEnumerator Wait() {
-        PlayerPrefs.Save();
         transitionUI.Play();
         audioManager.FadeMusic();
         yield return new WaitForSeconds(2.5f);
@@ -48,6 +49,7 @@ public class MenuManager : MonoBehaviour {
     }
 
     public void LoadMenuFromSettings() {
+        PlayerPrefs.Save();
         settingsMenuUI.SetActive(false);
         menuCanvas.SetActive(true);
     }

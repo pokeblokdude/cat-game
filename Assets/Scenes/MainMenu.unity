@@ -1153,6 +1153,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6129648342741232956, guid: 614094c439e57f44daa59eba448da0fa,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 585630273}
+    - target: {fileID: 6129648342741232956, guid: 614094c439e57f44daa59eba448da0fa,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateMasterVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 6129648342830581465, guid: 614094c439e57f44daa59eba448da0fa,
         type: 3}
       propertyPath: m_Name
@@ -1333,6 +1343,16 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6129648344563609948, guid: 614094c439e57f44daa59eba448da0fa,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 585630273}
+    - target: {fileID: 6129648344563609948, guid: 614094c439e57f44daa59eba448da0fa,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSfxVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 6129648344568997067, guid: 614094c439e57f44daa59eba448da0fa,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1357,6 +1377,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129648344695740756, guid: 614094c439e57f44daa59eba448da0fa,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 585630273}
+    - target: {fileID: 6129648344695740756, guid: 614094c439e57f44daa59eba448da0fa,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateMusicVolume
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 614094c439e57f44daa59eba448da0fa, type: 3}
