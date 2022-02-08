@@ -14,8 +14,8 @@ Janna Gilleman ([Instagram](https://www.instagram.com/janna.makes/))
 Harrison Tan ([Website](https://hofui.com))
 
 ### Music
-Toby Gilleman ([Bandcamp](https://tapeblind.bandcamp.com))
+Toby Gilleman ([Bandcamp](https://tapeblind.bandcamp.com/music))
 
 ---
 
-[View on Itch.io](https://poke-bd.itch.io/cataclysm)
+[View on Itch.io](https://poke-bd.itch.io/cataclysm)        [Listen to the soundtrack on Bandcamp](https://tapeblind.bandcamp.com/album/cataclysm-ost)
