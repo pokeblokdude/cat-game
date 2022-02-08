@@ -18,4 +18,6 @@ Toby Gilleman ([Bandcamp](https://tapeblind.bandcamp.com/music))
 
 ---
 
-[View on Itch.io](https://poke-bd.itch.io/cataclysm)        [Listen to the soundtrack on Bandcamp](https://tapeblind.bandcamp.com/album/cataclysm-ost)
+[View on Itch.io](https://poke-bd.itch.io/cataclysm)
+
+[Listen to the soundtrack on Bandcamp](https://tapeblind.bandcamp.com/album/cataclysm-ost)
