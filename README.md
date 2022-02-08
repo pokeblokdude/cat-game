@@ -1,6 +1,8 @@
 # Cataclysm
 A game about a cat causing havoc, made in 3 days for [Mini Jame Gam #7](https://itch.io/jam/mini-jame-gam-7)
+
 ---
+
 ## The Team
 ### Programmers
 Alex Howe 
