@@ -10,6 +10,9 @@ Ilya McCune-Pedit (@devious-protozoan)
 ### Illustration & Animation
 Janna Gilleman ([Instagram](https://www.instagram.com/janna.makes/))
 
+### Game & Visual Design
+Harrison Tan ([Website](https://hofui.com))
+
 ### Music
 Toby Gilleman ([Bandcamp](https://tapeblind.bandcamp.com))
 
