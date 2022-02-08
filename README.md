@@ -1,5 +1,5 @@
 # Cataclysm
-A game about a cat causing havoc, made in 3 days for [Mini Jame Gam #7](https://itch.io/jam/mini-jame-gam-7)
+A game about a cat causing havoc, made in 3 days for [Mini Jame Gam #7](https://itch.io/jam/mini-jame-gam-7). The theme was "You Are the Enemy", and the "special object" was a pen. You can see all the submissions [here](https://itch.io/jam/mini-jame-gam-7/entries).
 
 ## The Team
 ### Programmers
