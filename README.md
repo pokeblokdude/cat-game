@@ -3,12 +3,12 @@ A game about a cat causing havoc, made in 3 days for [Mini Jame Gam #7](https://
 
 ## The Team
 ### Programmers
-Alex Howe 
+Alex Howe (@pokeblokdude)
 
-Ilya McCune-Pedit
+Ilya McCune-Pedit (@devious-protozoan)
 
 ### Illustration & Animation
-Janna Gilleman
+Janna Gilleman ([Instagram](https://www.instagram.com/janna.makes/))
 
 ### Music
 Toby Gilleman ([Bandcamp](https://tapeblind.bandcamp.com))
